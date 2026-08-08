@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import BrandMark from './BrandMark';
 import { SITE_NAME } from '../lib/site';
 
 export default function SiteFooter() {
@@ -6,9 +7,7 @@ export default function SiteFooter() {
     <footer className="mt-auto border-t border-white/5 bg-surface-900/50">
       <div className="site-container flex flex-col items-center justify-between gap-4 py-10 sm:flex-row">
         <div className="flex items-center gap-2">
-          <span className="flex h-7 w-7 items-center justify-center rounded-md bg-gradient-to-br from-brand-400 to-brand-600 text-xs font-black text-white">
-            S
-          </span>
+          <BrandMark className="h-7 w-7 shrink-0 rounded-md" />
           <span className="text-sm font-semibold text-zinc-300">{SITE_NAME}</span>
         </div>
         <div className="flex flex-wrap justify-center gap-6 text-sm text-zinc-500">
