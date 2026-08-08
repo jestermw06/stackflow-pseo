@@ -1,4 +1,4 @@
-/** Canonical StackFlow comparison types — single source of truth for data + UI. */
+/** Canonical StackClash comparison types — single source of truth for data + UI. */
 
 export interface Software {
   id: string;

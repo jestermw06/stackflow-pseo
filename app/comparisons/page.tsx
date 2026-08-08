@@ -30,7 +30,7 @@ export default function ComparisonsIndexPage() {
             href="/"
             className="text-sm text-gray-500 hover:text-[#ff6600] transition"
           >
-            ← StackFlow
+            ← StackClash
           </Link>
           <span className="text-xs text-gray-600">
             {comparisons.length} comparisons

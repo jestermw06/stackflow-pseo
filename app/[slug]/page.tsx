@@ -95,7 +95,7 @@ export default function ComparisonPage({
       <div className="border-b border-white/5">
         <div className="max-w-5xl mx-auto px-4 py-4 flex items-center gap-4 text-sm">
           <Link href="/" className="text-gray-500 hover:text-[#ff6600] transition">
-            StackFlow
+            StackClash
           </Link>
           <span className="text-gray-700">/</span>
           <Link
