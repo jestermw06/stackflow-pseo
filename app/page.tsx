@@ -1,11 +1,20 @@
 import Link from 'next/link';
+import type { Metadata } from 'next';
 import comparisonData from '../data/production_comparisons.json';
+import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from '../lib/site';
 import type { Comparison } from '../lib/types';
 
-export const metadata = {
-  title: 'StackFlow | Marketing Automation Comparisons',
-  description:
-    'The definitive comparison guide for marketing automation integrations.',
+export const metadata: Metadata = {
+  title: { absolute: `${SITE_NAME} | Marketing Automation Comparisons` },
+  description: SITE_DESCRIPTION,
+  alternates: {
+    canonical: SITE_URL,
+  },
+  openGraph: {
+    title: `${SITE_NAME} | Marketing Automation Comparisons`,
+    description: SITE_DESCRIPTION,
+    url: SITE_URL,
+  },
 };
 
 const comparisons = comparisonData as Comparison[];
@@ -88,18 +97,31 @@ export default function HomePage() {
             ))}
           </div>
 
-          {comparisons.length > 9 && (
-            <p className="mt-12 text-center text-gray-600 text-sm">
-              Showing 9 of {comparisons.length}. Every comparison is statically
-              generated and SEO-ready.
-            </p>
-          )}
+          <div className="mt-12 text-center">
+            <Link
+              href="/comparisons"
+              className="inline-flex items-center gap-2 text-[#ff6600] font-semibold hover:underline"
+            >
+              View all {comparisons.length} comparisons →
+            </Link>
+          </div>
         </div>
       </section>
 
-      <footer className="py-12 border-t border-white/5 text-center">
+      <footer className="py-12 border-t border-white/5 text-center space-y-3">
+        <div className="flex justify-center gap-6 text-sm text-gray-500">
+          <Link href="/comparisons" className="hover:text-[#ff6600] transition">
+            Comparisons
+          </Link>
+          <a
+            href="/sitemap.xml"
+            className="hover:text-[#ff6600] transition"
+          >
+            Sitemap
+          </a>
+        </div>
         <p className="text-sm text-gray-600">
-          &copy; {new Date().getFullYear()} StackFlow.
+          &copy; {new Date().getFullYear()} {SITE_NAME}.
         </p>
       </footer>
     </div>
