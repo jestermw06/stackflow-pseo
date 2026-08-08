@@ -15,6 +15,30 @@ import { fileURLToPath } from 'url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, '..');
 
+/** Load KEY=VAL from .env / .env.local (gitignored). Windows node.exe often misses WSL exports. */
+function loadEnvFiles() {
+  for (const name of ['.env.local', '.env']) {
+    const p = path.join(ROOT, name);
+    if (!fs.existsSync(p)) continue;
+    for (const line of fs.readFileSync(p, 'utf8').split(/\r?\n/)) {
+      const t = line.trim();
+      if (!t || t.startsWith('#')) continue;
+      const i = t.indexOf('=');
+      if (i < 1) continue;
+      const k = t.slice(0, i).trim();
+      let v = t.slice(i + 1).trim();
+      if (
+        (v.startsWith('"') && v.endsWith('"')) ||
+        (v.startsWith("'") && v.endsWith("'"))
+      ) {
+        v = v.slice(1, -1);
+      }
+      if (!process.env[k]) process.env[k] = v;
+    }
+  }
+}
+loadEnvFiles();
+
 const provider = (process.env.AI_PROVIDER || 'xai').toLowerCase();
 const apiKey =
   process.env.XAI_API_KEY ||
@@ -62,7 +86,8 @@ const prompt = `${promptTemplate}\n\n# LIVE INPUT\n${userPayload}`;
 const endpoints = {
   xai: {
     url: 'https://api.x.ai/v1/chat/completions',
-    model: process.env.AI_MODEL || 'grok-3',
+    // Prefer explicit model; aliases like grok-3 also work on current xAI API
+    model: process.env.AI_MODEL || 'grok-4.5',
   },
   openai: {
     url: 'https://api.openai.com/v1/chat/completions',

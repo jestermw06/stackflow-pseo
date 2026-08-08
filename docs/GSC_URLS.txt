@@ -8,6 +8,8 @@ https://stackclash.io/activecampaign-vs-omnisend
 https://stackclash.io/activecampaign-vs-pipedrive
 https://stackclash.io/activecampaign-vs-zoho-crm
 https://stackclash.io/customer-io-vs-brevo
+https://stackclash.io/customer-io-vs-mailchimp
+https://stackclash.io/customer-io-vs-omnisend
 https://stackclash.io/hubspot-vs-activecampaign
 https://stackclash.io/hubspot-vs-intercom
 https://stackclash.io/hubspot-vs-mailchimp
@@ -15,6 +17,9 @@ https://stackclash.io/hubspot-vs-pipedrive
 https://stackclash.io/hubspot-vs-zendesk
 https://stackclash.io/hubspot-vs-zoho-crm
 https://stackclash.io/kit-vs-brevo
+https://stackclash.io/kit-vs-customer-io
+https://stackclash.io/kit-vs-klaviyo
+https://stackclash.io/kit-vs-omnisend
 https://stackclash.io/klaviyo-vs-brevo
 https://stackclash.io/klaviyo-vs-customer-io
 https://stackclash.io/klaviyo-vs-omnisend

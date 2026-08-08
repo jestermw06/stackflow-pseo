@@ -78,6 +78,12 @@ CURATED_PAIRS: list[tuple[str, str]] = [
     ("activecampaign", "kit"),
     ("kit", "brevo"),
     ("customer_io", "brevo"),
+    # Grok-generated batch (2026-08-08)
+    ("kit", "klaviyo"),
+    ("kit", "omnisend"),
+    ("customer_io", "omnisend"),
+    ("customer_io", "mailchimp"),
+    ("kit", "customer_io"),
 ]
 
 # Flagship hand-authored content keyed by "id_a-vs-id_b" (slug may differ)
@@ -1191,6 +1197,13 @@ def build_entry(a_id: str, b_id: str) -> dict:
 
 
 def main() -> None:
+    path = ROOT / "data" / "production_comparisons.json"
+    existing_by_slug: dict[str, dict] = {}
+    if path.exists():
+        for e in json.loads(path.read_text()):
+            if isinstance(e, dict) and e.get("slug"):
+                existing_by_slug[e["slug"]] = e
+
     # de-dupe while preserving order (also skip reverse duplicates)
     seen_pairs: set[frozenset[str]] = set()
     out: list[dict] = []
@@ -1199,15 +1212,51 @@ def main() -> None:
         if key in seen_pairs:
             continue
         seen_pairs.add(key)
-        out.append(build_entry(a_id, b_id))
+        entry = build_entry(a_id, b_id)
+        # Keep LLM-generated bodies if present and schema-complete
+        prev = existing_by_slug.get(entry["slug"])
+        if (
+            prev
+            and prev.get("quality") == "generated"
+            and prev.get("prosA")
+            and prev.get("verdict")
+        ):
+            entry = prev
+            entry["quality"] = "generated"
+        out.append(entry)
 
-    out.sort(key=lambda x: (0 if x.get("quality") == "flagship" else 1, x["slug"]))
-    path = ROOT / "data" / "production_comparisons.json"
+    # Preserve generated pairs not yet listed in CURATED_PAIRS
+    for slug, prev in existing_by_slug.items():
+        if prev.get("quality") != "generated":
+            continue
+        if any(e["slug"] == slug for e in out):
+            continue
+        sa = prev.get("softwareA") or {}
+        sb = prev.get("softwareB") or {}
+        key = frozenset([sa.get("id"), sb.get("id")])
+        if None in key or key in seen_pairs:
+            continue
+        seen_pairs.add(key)
+        out.append(prev)
+
+    out.sort(
+        key=lambda x: (
+            0
+            if x.get("quality") == "flagship"
+            else 1
+            if x.get("quality") == "generated"
+            else 2,
+            x["slug"],
+        )
+    )
     path.write_text(json.dumps(out, indent=2) + "\n")
     flagships = sum(1 for x in out if x.get("quality") == "flagship")
-    print(f"Wrote {len(out)} comparisons ({flagships} flagship) → {path}")
+    generated = sum(1 for x in out if x.get("quality") == "generated")
+    print(
+        f"Wrote {len(out)} comparisons ({flagships} flagship, {generated} generated) → {path}"
+    )
     for x in out:
-        print(f"  [{x.get('quality','?'):8}] {x['slug']}")
+        print(f"  [{x.get('quality', '?'):9}] {x['slug']}")
 
 
 if __name__ == "__main__":

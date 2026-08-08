@@ -672,6 +672,182 @@
     "quality": "flagship"
   },
   {
+    "slug": "customer-io-vs-mailchimp",
+    "title": "Customer.io vs Mailchimp",
+    "softwareA": {
+      "id": "customer_io",
+      "name": "Customer.io",
+      "category": "Marketing Automation",
+      "description": "Behavioral messaging platform for automated email, push, SMS, and in-app campaigns.",
+      "key_features": [
+        "Behavioral Triggers",
+        "Multi-channel Messaging",
+        "Segment Builder",
+        "Developer-friendly APIs"
+      ],
+      "official_url": "https://customer.io"
+    },
+    "softwareB": {
+      "id": "mailchimp",
+      "name": "Mailchimp",
+      "category": "Email Marketing",
+      "description": "Accessible email marketing and automation platform for small businesses.",
+      "key_features": [
+        "Email Templates",
+        "Audience Management",
+        "Automated Journeys",
+        "Ad Tools"
+      ],
+      "official_url": "https://www.mailchimp.com"
+    },
+    "verdict": "Customer.io",
+    "verdictReason": "Customer.io is stronger for teams needing behavioral, multi-channel messaging with developer-friendly automation.",
+    "comparisonPoints": [
+      {
+        "feature": "Behavioral Triggers",
+        "softwareA": true,
+        "softwareB": false
+      },
+      {
+        "feature": "Multi-channel Messaging",
+        "softwareA": true,
+        "softwareB": false
+      },
+      {
+        "feature": "Segment Builder",
+        "softwareA": true,
+        "softwareB": true
+      },
+      {
+        "feature": "Developer-friendly APIs",
+        "softwareA": true,
+        "softwareB": false
+      },
+      {
+        "feature": "Email Templates",
+        "softwareA": false,
+        "softwareB": true
+      },
+      {
+        "feature": "Audience Management",
+        "softwareA": true,
+        "softwareB": true
+      },
+      {
+        "feature": "Automated Journeys",
+        "softwareA": true,
+        "softwareB": true
+      },
+      {
+        "feature": "Ad Tools",
+        "softwareA": false,
+        "softwareB": true
+      }
+    ],
+    "prosA": [
+      "Strong behavioral triggers",
+      "Native multi-channel messaging",
+      "Developer-friendly APIs"
+    ],
+    "consA": [
+      "Less beginner-focused templates",
+      "Steeper learning curve"
+    ],
+    "prosB": [
+      "User-friendly email templates",
+      "Accessible for small businesses",
+      "Built-in ad tools"
+    ],
+    "consB": [
+      "Limited behavioral depth",
+      "Weaker multi-channel automation"
+    ],
+    "quality": "generated"
+  },
+  {
+    "slug": "customer-io-vs-omnisend",
+    "title": "Customer.io vs Omnisend",
+    "softwareA": {
+      "id": "customer_io",
+      "name": "Customer.io",
+      "category": "Marketing Automation",
+      "description": "Behavioral messaging platform for automated email, push, SMS, and in-app campaigns.",
+      "key_features": [
+        "Behavioral Triggers",
+        "Multi-channel Messaging",
+        "Segment Builder",
+        "Developer-friendly APIs"
+      ],
+      "official_url": "https://customer.io"
+    },
+    "softwareB": {
+      "id": "omnisend",
+      "name": "Omnisend",
+      "category": "E-commerce Marketing",
+      "description": "Multi-channel marketing automation for e-commerce brands.",
+      "key_features": [
+        "Email/SMS Automation",
+        "Push Notifications",
+        "Product Recommendations",
+        "Segmentation"
+      ],
+      "official_url": "https://www.omnisend.com"
+    },
+    "verdict": "Omnisend",
+    "verdictReason": "Omnisend is the stronger choice for e-commerce brands needing product recommendations and streamlined multi-channel automation.",
+    "comparisonPoints": [
+      {
+        "feature": "Behavioral Triggers",
+        "softwareA": true,
+        "softwareB": false
+      },
+      {
+        "feature": "Multi-channel Messaging",
+        "softwareA": true,
+        "softwareB": true
+      },
+      {
+        "feature": "Segmentation",
+        "softwareA": true,
+        "softwareB": true
+      },
+      {
+        "feature": "Developer-friendly APIs",
+        "softwareA": true,
+        "softwareB": false
+      },
+      {
+        "feature": "Product Recommendations",
+        "softwareA": false,
+        "softwareB": true
+      },
+      {
+        "feature": "Push Notifications",
+        "softwareA": true,
+        "softwareB": true
+      }
+    ],
+    "prosA": [
+      "Strong behavioral trigger engine",
+      "Developer-friendly APIs",
+      "Flexible multi-channel messaging"
+    ],
+    "consA": [
+      "Less e-commerce-specific tooling",
+      "Steeper learning curve"
+    ],
+    "prosB": [
+      "Built-in product recommendations",
+      "E-commerce-focused automation",
+      "Accessible email/SMS workflows"
+    ],
+    "consB": [
+      "Limited developer/API depth",
+      "Narrower fit outside e-commerce"
+    ],
+    "quality": "generated"
+  },
+  {
     "slug": "hubspot-vs-activecampaign",
     "title": "HubSpot vs ActiveCampaign",
     "softwareA": {
@@ -1258,6 +1434,285 @@
     ],
     "intentFamily": "email_marketing",
     "quality": "flagship"
+  },
+  {
+    "slug": "kit-vs-customer-io",
+    "title": "Kit (ConvertKit) vs Customer.io",
+    "softwareA": {
+      "id": "kit",
+      "name": "Kit (ConvertKit)",
+      "category": "Email Marketing",
+      "description": "Creator-focused email marketing and automation for newsletters and digital products.",
+      "key_features": [
+        "Creator Landing Pages",
+        "Visual Automations",
+        "Tag-based Segmentation",
+        "Commerce / Digital Products"
+      ],
+      "official_url": "https://kit.com"
+    },
+    "softwareB": {
+      "id": "customer_io",
+      "name": "Customer.io",
+      "category": "Marketing Automation",
+      "description": "Behavioral messaging platform for automated email, push, SMS, and in-app campaigns.",
+      "key_features": [
+        "Behavioral Triggers",
+        "Multi-channel Messaging",
+        "Segment Builder",
+        "Developer-friendly APIs"
+      ],
+      "official_url": "https://customer.io"
+    },
+    "verdict": "Kit (ConvertKit)",
+    "verdictReason": "Kit wins for most creators and solopreneurs needing simple email automation, landing pages, and digital product sales.",
+    "comparisonPoints": [
+      {
+        "feature": "Creator Landing Pages",
+        "softwareA": true,
+        "softwareB": false
+      },
+      {
+        "feature": "Visual Automations",
+        "softwareA": true,
+        "softwareB": true
+      },
+      {
+        "feature": "Tag-based Segmentation",
+        "softwareA": true,
+        "softwareB": false
+      },
+      {
+        "feature": "Commerce / Digital Products",
+        "softwareA": true,
+        "softwareB": false
+      },
+      {
+        "feature": "Behavioral Triggers",
+        "softwareA": false,
+        "softwareB": true
+      },
+      {
+        "feature": "Multi-channel Messaging",
+        "softwareA": false,
+        "softwareB": true
+      },
+      {
+        "feature": "Segment Builder",
+        "softwareA": true,
+        "softwareB": true
+      },
+      {
+        "feature": "Developer-friendly APIs",
+        "softwareA": false,
+        "softwareB": true
+      }
+    ],
+    "prosA": [
+      "Built for creators and newsletters",
+      "Native digital product commerce",
+      "Simple visual automations and tagging"
+    ],
+    "consA": [
+      "Limited multi-channel messaging",
+      "Less suited for complex behavioral product flows"
+    ],
+    "prosB": [
+      "Strong behavioral trigger engine",
+      "Email, push, SMS, and in-app in one platform",
+      "Developer-friendly APIs and data control"
+    ],
+    "consB": [
+      "Steeper learning curve",
+      "No native creator commerce or landing pages"
+    ],
+    "quality": "generated"
+  },
+  {
+    "slug": "kit-vs-klaviyo",
+    "title": "Kit (ConvertKit) vs Klaviyo",
+    "softwareA": {
+      "id": "kit",
+      "name": "Kit (ConvertKit)",
+      "category": "Email Marketing",
+      "description": "Creator-focused email marketing and automation for newsletters and digital products.",
+      "key_features": [
+        "Creator Landing Pages",
+        "Visual Automations",
+        "Tag-based Segmentation",
+        "Commerce / Digital Products"
+      ],
+      "official_url": "https://kit.com"
+    },
+    "softwareB": {
+      "id": "klaviyo",
+      "name": "Klaviyo",
+      "category": "Email/SMS Marketing",
+      "description": "Data-driven marketing automation platform focused on e-commerce.",
+      "key_features": [
+        "Segmentation",
+        "Predictive Analytics",
+        "SMS Marketing",
+        "E-commerce Integrations"
+      ],
+      "official_url": "https://www.klaviyo.com"
+    },
+    "verdict": "Klaviyo",
+    "verdictReason": "Klaviyo wins for most users needing scalable, data-driven e-commerce email and SMS automation.",
+    "comparisonPoints": [
+      {
+        "feature": "Email Marketing Automation",
+        "softwareA": true,
+        "softwareB": true
+      },
+      {
+        "feature": "Segmentation",
+        "softwareA": true,
+        "softwareB": true
+      },
+      {
+        "feature": "SMS Marketing",
+        "softwareA": false,
+        "softwareB": true
+      },
+      {
+        "feature": "Predictive Analytics",
+        "softwareA": false,
+        "softwareB": true
+      },
+      {
+        "feature": "Creator Landing Pages",
+        "softwareA": true,
+        "softwareB": false
+      },
+      {
+        "feature": "E-commerce Integrations",
+        "softwareA": true,
+        "softwareB": true
+      },
+      {
+        "feature": "Visual Automations",
+        "softwareA": true,
+        "softwareB": true
+      },
+      {
+        "feature": "Digital Product Commerce",
+        "softwareA": true,
+        "softwareB": false
+      }
+    ],
+    "prosA": [
+      "Strong creator and newsletter focus",
+      "Intuitive visual automations",
+      "Built-in digital product selling"
+    ],
+    "consA": [
+      "Lacks native SMS marketing",
+      "Limited predictive analytics"
+    ],
+    "prosB": [
+      "Robust e-commerce integrations",
+      "Advanced segmentation and predictive analytics",
+      "Native SMS marketing"
+    ],
+    "consB": [
+      "Steeper learning curve for non-e-commerce creators",
+      "Less tailored to simple newsletter workflows"
+    ],
+    "quality": "generated"
+  },
+  {
+    "slug": "kit-vs-omnisend",
+    "title": "Kit (ConvertKit) vs Omnisend",
+    "softwareA": {
+      "id": "kit",
+      "name": "Kit (ConvertKit)",
+      "category": "Email Marketing",
+      "description": "Creator-focused email marketing and automation for newsletters and digital products.",
+      "key_features": [
+        "Creator Landing Pages",
+        "Visual Automations",
+        "Tag-based Segmentation",
+        "Commerce / Digital Products"
+      ],
+      "official_url": "https://kit.com"
+    },
+    "softwareB": {
+      "id": "omnisend",
+      "name": "Omnisend",
+      "category": "E-commerce Marketing",
+      "description": "Multi-channel marketing automation for e-commerce brands.",
+      "key_features": [
+        "Email/SMS Automation",
+        "Push Notifications",
+        "Product Recommendations",
+        "Segmentation"
+      ],
+      "official_url": "https://www.omnisend.com"
+    },
+    "verdict": "Omnisend",
+    "verdictReason": "Omnisend is the stronger choice for e-commerce brands needing multi-channel automation across email, SMS, and push.",
+    "comparisonPoints": [
+      {
+        "feature": "Email Automation",
+        "softwareA": true,
+        "softwareB": true
+      },
+      {
+        "feature": "SMS Marketing",
+        "softwareA": false,
+        "softwareB": true
+      },
+      {
+        "feature": "Push Notifications",
+        "softwareA": false,
+        "softwareB": true
+      },
+      {
+        "feature": "Creator Landing Pages",
+        "softwareA": true,
+        "softwareB": false
+      },
+      {
+        "feature": "Product Recommendations",
+        "softwareA": false,
+        "softwareB": true
+      },
+      {
+        "feature": "Segmentation",
+        "softwareA": true,
+        "softwareB": true
+      },
+      {
+        "feature": "Digital Products Commerce",
+        "softwareA": true,
+        "softwareB": false
+      },
+      {
+        "feature": "Visual Automations",
+        "softwareA": true,
+        "softwareB": true
+      }
+    ],
+    "prosA": [
+      "Strong creator and newsletter focus",
+      "Visual automations and tag-based segmentation",
+      "Built-in digital product commerce"
+    ],
+    "consA": [
+      "Lacks native SMS and push channels",
+      "Less tailored for full e-commerce catalogs"
+    ],
+    "prosB": [
+      "True multi-channel email, SMS, and push",
+      "E-commerce product recommendations",
+      "Robust store-focused segmentation"
+    ],
+    "consB": [
+      "Less ideal for creator-led newsletters",
+      "Weaker landing page tools for creators"
+    ],
+    "quality": "generated"
   },
   {
     "slug": "klaviyo-vs-brevo",
@@ -2015,7 +2470,7 @@
     ],
     "prosB": [
       "Huge integration catalog and templates",
-      "Simple trigger \u2192 action model teams already know",
+      "Simple trigger → action model teams already know",
       "Excellent docs and ecosystem momentum"
     ],
     "consB": [
