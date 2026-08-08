@@ -27,9 +27,7 @@ const comparisons = comparisonData as Comparison[];
 
 function displayTitle(comp: Comparison): string {
   if (comp.title) return comp.title;
-  const a = comp.softwareA?.name ?? 'Tool A';
-  const b = comp.softwareB?.name ?? 'Tool B';
-  return `${a} vs ${b}`;
+  return `${comp.softwareA?.name ?? 'Tool A'} vs ${comp.softwareB?.name ?? 'Tool B'}`;
 }
 
 function featuredList(all: Comparison[], limit = 9): Comparison[] {
@@ -42,7 +40,7 @@ export default function HomePage() {
   const featuredComparisons = featuredList(comparisons, 9);
 
   return (
-    <div className="min-h-screen bg-[#1a1a1a] text-white selection:bg-[#ff6600] selection:text-white">
+    <>
       <JsonLd
         data={[
           websiteJsonLd(),
@@ -51,105 +49,129 @@ export default function HomePage() {
         ]}
       />
 
-      <section className="relative overflow-hidden py-24 sm:py-32">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_-20%,#ff660033,transparent_50%)]" />
-        <div className="container relative mx-auto px-6 text-center">
-          <p className="text-xs font-bold uppercase tracking-widest text-[#ff6600] mb-4">
-            {SITE_NAME}
-          </p>
-          <h1 className="text-5xl font-extrabold tracking-tight sm:text-7xl bg-clip-text text-transparent bg-gradient-to-b from-white to-[#ff6600] mb-6">
-            Pick Your Stack. <br />
-            Win the Matchup.
+      {/* Hero */}
+      <section className="relative overflow-hidden pb-20 pt-16 sm:pb-28 sm:pt-24">
+        <div
+          className="pointer-events-none absolute inset-0 opacity-40"
+          style={{
+            backgroundImage:
+              'linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)',
+            backgroundSize: '48px 48px',
+            maskImage: 'radial-gradient(ellipse 70% 60% at 50% 0%, black, transparent)',
+          }}
+        />
+        <div className="site-container relative text-center">
+          <p className="eyebrow mb-5">Software matchups that actually help</p>
+          <h1 className="font-display mx-auto max-w-4xl text-4xl font-bold tracking-tight text-white sm:text-6xl lg:text-7xl">
+            Pick your stack.{' '}
+            <span className="bg-gradient-to-r from-brand-300 via-brand-400 to-orange-200 bg-clip-text text-transparent">
+              Win the clash.
+            </span>
           </h1>
-          <p className="mx-auto max-w-2xl text-lg sm:text-xl text-gray-400 leading-relaxed mb-10">
-            Side-by-side comparisons for marketing automation, CRM, email, and
-            workflow tools — clear verdicts, not fluff.
+          <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-zinc-400 sm:text-lg">
+            Clear verdicts on CRM, email, automation, and e-commerce tools —
+            built for teams choosing software, not reading fluff.
           </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <a
-              href="#comparisons"
-              className="rounded-full bg-[#ff6600] px-8 py-4 text-lg font-bold text-white transition hover:bg-[#e65c00] shadow-[0_0_20px_rgba(255,102,0,0.3)]"
-            >
-              Explore Comparisons
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+            <a href="#featured" className="btn-primary px-8 py-3.5 text-base">
+              Explore matchups
             </a>
-            <Link
-              href="/comparisons"
-              className="rounded-full border border-white/20 px-8 py-4 text-lg font-bold text-white transition hover:border-[#ff6600]"
-            >
-              View all
+            <Link href="/comparisons" className="btn-secondary px-8 py-3.5 text-base">
+              View all {comparisons.length}
             </Link>
+          </div>
+
+          <div className="mx-auto mt-14 grid max-w-3xl grid-cols-3 gap-3 sm:gap-4">
+            {[
+              { label: 'Comparisons', value: String(comparisons.length) },
+              { label: 'Flagship reviews', value: String(comparisons.filter((c) => c.quality === 'flagship').length) },
+              { label: 'Focus', value: 'MarTech' },
+            ].map((stat) => (
+              <div
+                key={stat.label}
+                className="rounded-2xl border border-white/10 bg-surface-900/60 px-3 py-4 sm:px-4"
+              >
+                <p className="font-display text-xl font-bold text-white sm:text-2xl">
+                  {stat.value}
+                </p>
+                <p className="mt-1 text-[11px] uppercase tracking-wider text-zinc-500 sm:text-xs">
+                  {stat.label}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      <section id="comparisons" className="py-24 bg-[#111]">
-        <div className="container mx-auto px-6">
-          <div className="mb-16 text-center">
-            <h2 className="text-3xl font-bold sm:text-4xl mb-4">
-              Featured matchups
-            </h2>
-            <div className="h-1 w-20 bg-[#ff6600] mx-auto rounded-full" />
-            <p className="mt-4 text-gray-500">
-              Flagship reviews first · {comparisons.length} total
-            </p>
+      {/* Featured */}
+      <section id="featured" className="pb-24">
+        <div className="site-container">
+          <div className="mb-10 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
+            <div>
+              <p className="eyebrow mb-2">Featured</p>
+              <h2 className="section-title">Top matchups</h2>
+              <p className="mt-2 max-w-xl text-zinc-500">
+                Flagship comparisons first — deep feature tables, honest pros
+                and cons, and a clear winner.
+              </p>
+            </div>
+            <Link
+              href="/comparisons"
+              className="text-sm font-semibold text-brand-400 hover:text-brand-300 transition"
+            >
+              See full catalog →
+            </Link>
           </div>
 
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
             {featuredComparisons.map((comp) => (
               <Link
                 key={comp.slug}
                 href={`/${comp.slug}`}
-                className="group relative flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-[#1a1a1a] p-6 transition hover:border-[#ff6600]/50 hover:shadow-[0_0_30px_rgba(255,102,0,0.1)]"
+                className="card-hover group flex flex-col p-6"
               >
-                <div className="mb-4 flex items-center justify-between">
-                  <span className="text-xs font-bold uppercase tracking-widest text-[#ff6600]">
+                <div className="mb-4 flex items-center justify-between gap-2">
+                  <span
+                    className={`rounded-full px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider ${
+                      comp.quality === 'flagship'
+                        ? 'bg-brand-500/15 text-brand-300 ring-1 ring-brand-500/30'
+                        : 'bg-white/5 text-zinc-400 ring-1 ring-white/10'
+                    }`}
+                  >
                     {comp.quality === 'flagship' ? 'Flagship' : 'Comparison'}
                   </span>
-                  <div className="h-2 w-2 rounded-full bg-[#ff6600] animate-pulse" />
+                  {comp.intentFamily && (
+                    <span className="truncate text-[10px] uppercase tracking-wider text-zinc-600">
+                      {comp.intentFamily.replace(/_/g, ' ')}
+                    </span>
+                  )}
                 </div>
-                <h3 className="text-xl font-bold leading-tight group-hover:text-[#ff6600] transition">
+
+                <h3 className="font-display text-xl font-semibold leading-snug text-white transition group-hover:text-brand-300">
                   {displayTitle(comp)}
                 </h3>
-                <p className="mt-4 text-sm text-gray-500 line-clamp-2">
+
+                <p className="mt-3 flex-1 text-sm leading-relaxed text-zinc-500 line-clamp-3">
                   {comp.verdictReason ||
                     `Compare ${comp.softwareA?.name} vs ${comp.softwareB?.name}`}
                 </p>
-                {comp.verdict && (
-                  <p className="mt-4 text-xs text-gray-600">
-                    Verdict:{' '}
-                    <span className="text-[#ff6600] font-semibold">
-                      {comp.verdict}
+
+                <div className="mt-5 flex items-center justify-between border-t border-white/5 pt-4">
+                  <p className="text-xs text-zinc-500">
+                    Winner{' '}
+                    <span className="font-semibold text-brand-400">
+                      {comp.verdict || '—'}
                     </span>
                   </p>
-                )}
+                  <span className="text-sm font-medium text-zinc-400 transition group-hover:text-brand-400">
+                    Read →
+                  </span>
+                </div>
               </Link>
             ))}
           </div>
-
-          <div className="mt-12 text-center">
-            <Link
-              href="/comparisons"
-              className="inline-flex items-center gap-2 text-[#ff6600] font-semibold hover:underline"
-            >
-              View all {comparisons.length} comparisons →
-            </Link>
-          </div>
         </div>
       </section>
-
-      <footer className="py-12 border-t border-white/5 text-center space-y-3">
-        <div className="flex justify-center gap-6 text-sm text-gray-500">
-          <Link href="/comparisons" className="hover:text-[#ff6600] transition">
-            Comparisons
-          </Link>
-          <a href="/sitemap.xml" className="hover:text-[#ff6600] transition">
-            Sitemap
-          </a>
-        </div>
-        <p className="text-sm text-gray-600">
-          &copy; {new Date().getFullYear()} {SITE_NAME}.
-        </p>
-      </footer>
-    </div>
+    </>
   );
 }

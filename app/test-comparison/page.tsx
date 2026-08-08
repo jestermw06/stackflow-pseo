@@ -2,7 +2,7 @@ import ComparisonTemplate from '../../components/ComparisonTemplate';
 
 export default function TestComparisonPage() {
   return (
-    <main className="min-h-screen bg-[#1a1a1a] text-white">
+    <main>
       <ComparisonTemplate
         softwareA={{
           id: 'test-a',

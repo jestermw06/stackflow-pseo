@@ -17,65 +17,58 @@ export const metadata: Metadata = {
   },
 };
 
-const comparisons = [...(comparisonData as Comparison[])].sort((a, b) =>
-  (a.title || a.slug).localeCompare(b.title || b.slug)
-);
+const comparisons = [...(comparisonData as Comparison[])].sort((a, b) => {
+  const aq = a.quality === 'flagship' ? 0 : 1;
+  const bq = b.quality === 'flagship' ? 0 : 1;
+  if (aq !== bq) return aq - bq;
+  return (a.title || a.slug).localeCompare(b.title || b.slug);
+});
 
 export default function ComparisonsIndexPage() {
   return (
-    <main className="min-h-screen bg-[#1a1a1a] text-white">
-      <div className="border-b border-white/5">
-        <div className="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
-          <Link
-            href="/"
-            className="text-sm text-gray-500 hover:text-[#ff6600] transition"
-          >
-            ← StackClash
-          </Link>
-          <span className="text-xs text-gray-600">
-            {comparisons.length} comparisons
-          </span>
-        </div>
+    <main className="site-container py-12 sm:py-16">
+      <div className="mb-10 max-w-2xl">
+        <p className="eyebrow mb-2">Catalog</p>
+        <h1 className="section-title">All comparisons</h1>
+        <p className="mt-3 text-zinc-500">
+          {comparisons.length} side-by-side matchups. Flagships first.
+        </p>
       </div>
 
-      <div className="max-w-5xl mx-auto px-4 py-16">
-        <h1 className="text-4xl font-extrabold tracking-tight mb-4">
-          All Comparisons
-        </h1>
-        <p className="text-gray-400 mb-12 max-w-2xl">
-          Side-by-side breakdowns of marketing automation, CRM, email, and
-          workflow tools. Pick a matchup to see the verdict, features, and
-          pros/cons.
-        </p>
-
-        <ul className="divide-y divide-white/5 border border-white/10 rounded-2xl overflow-hidden">
-          {comparisons.map((comp) => (
-            <li key={comp.slug}>
-              <Link
-                href={`/${comp.slug}`}
-                className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 px-6 py-5 hover:bg-white/5 transition group"
-              >
-                <div>
-                  <h2 className="font-semibold group-hover:text-[#ff6600] transition">
-                    {comp.title ||
-                      `${comp.softwareA?.name} vs ${comp.softwareB?.name}`}
-                  </h2>
-                  {comp.verdictReason && (
-                    <p className="text-sm text-gray-500 mt-1 line-clamp-1">
-                      {comp.verdictReason}
-                    </p>
+      <ul className="card divide-y divide-white/5 overflow-hidden p-0">
+        {comparisons.map((comp) => (
+          <li key={comp.slug}>
+            <Link
+              href={`/${comp.slug}`}
+              className="flex flex-col gap-2 px-5 py-5 transition hover:bg-white/[0.03] sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:px-6"
+            >
+              <div className="min-w-0">
+                <div className="mb-1 flex items-center gap-2">
+                  {comp.quality === 'flagship' && (
+                    <span className="rounded-full bg-brand-500/15 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-brand-300 ring-1 ring-brand-500/30">
+                      Flagship
+                    </span>
                   )}
                 </div>
-                {comp.verdict && (
-                  <span className="text-xs font-semibold text-[#ff6600] shrink-0">
-                    Winner: {comp.verdict}
-                  </span>
+                <h2 className="font-display text-lg font-semibold text-white">
+                  {comp.title ||
+                    `${comp.softwareA?.name} vs ${comp.softwareB?.name}`}
+                </h2>
+                {comp.verdictReason && (
+                  <p className="mt-1 line-clamp-1 text-sm text-zinc-500">
+                    {comp.verdictReason}
+                  </p>
                 )}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
+              </div>
+              {comp.verdict && (
+                <span className="shrink-0 text-xs font-semibold text-brand-400 sm:text-sm">
+                  Winner: {comp.verdict}
+                </span>
+              )}
+            </Link>
+          </li>
+        ))}
+      </ul>
     </main>
   );
 }

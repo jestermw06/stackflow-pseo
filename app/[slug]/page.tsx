@@ -26,7 +26,9 @@ export async function generateMetadata({
     return { title: 'Comparison Not Found' };
   }
 
-  const title = comparison.title || `${comparison.softwareA?.name} vs ${comparison.softwareB?.name}`;
+  const title =
+    comparison.title ||
+    `${comparison.softwareA?.name} vs ${comparison.softwareB?.name}`;
   const description =
     comparison.verdictReason ||
     `Compare ${comparison.softwareA?.name} vs ${comparison.softwareB?.name} — features, pros, cons, and a clear verdict.`;
@@ -93,22 +95,20 @@ export default function ComparisonPage({
   const related = relatedComparisons(comparison);
 
   return (
-    <main className="min-h-screen bg-[#1a1a1a] text-white">
+    <main>
       <JsonLd data={comparisonJsonLd(comparison)} />
-      <div className="border-b border-white/5">
-        <div className="max-w-5xl mx-auto px-4 py-4 flex items-center gap-4 text-sm">
-          <Link href="/" className="text-gray-500 hover:text-[#ff6600] transition">
-            {SITE_NAME}
+
+      <div className="border-b border-white/5 bg-surface-900/40">
+        <div className="site-container flex flex-wrap items-center gap-2 py-3 text-sm text-zinc-500">
+          <Link href="/" className="hover:text-brand-400 transition">
+            Home
           </Link>
-          <span className="text-gray-700">/</span>
-          <Link
-            href="/comparisons"
-            className="text-gray-500 hover:text-[#ff6600] transition"
-          >
+          <span className="text-zinc-700">/</span>
+          <Link href="/comparisons" className="hover:text-brand-400 transition">
             Comparisons
           </Link>
-          <span className="text-gray-700">/</span>
-          <span className="text-gray-400 truncate">
+          <span className="text-zinc-700">/</span>
+          <span className="truncate text-zinc-400">
             {comparison.title || comparison.slug}
           </span>
         </div>
@@ -127,23 +127,25 @@ export default function ComparisonPage({
       />
 
       {related.length > 0 && (
-        <section className="max-w-5xl mx-auto px-4 pb-20">
-          <h2 className="text-2xl font-bold mb-6">Related comparisons</h2>
+        <section className="site-container pb-20">
+          <h2 className="section-title mb-6 text-2xl">Related matchups</h2>
           <div className="grid gap-4 sm:grid-cols-2">
             {related.map((comp) => (
               <Link
                 key={comp.slug}
                 href={`/${comp.slug}`}
-                className="rounded-xl border border-white/10 bg-white/5 p-5 hover:border-[#ff6600]/50 transition group"
+                className="card-hover p-5 group"
               >
-                <h3 className="font-semibold group-hover:text-[#ff6600] transition">
+                <h3 className="font-display font-semibold text-white transition group-hover:text-brand-300">
                   {comp.title ||
                     `${comp.softwareA?.name} vs ${comp.softwareB?.name}`}
                 </h3>
                 {comp.verdict && (
-                  <p className="text-sm text-gray-500 mt-2">
-                    Verdict:{' '}
-                    <span className="text-[#ff6600]">{comp.verdict}</span>
+                  <p className="mt-2 text-sm text-zinc-500">
+                    Winner{' '}
+                    <span className="font-semibold text-brand-400">
+                      {comp.verdict}
+                    </span>
                   </p>
                 )}
               </Link>
