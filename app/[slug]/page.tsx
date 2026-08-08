@@ -2,7 +2,9 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import ComparisonTemplate from '../../components/ComparisonTemplate';
+import JsonLd from '../../components/JsonLd';
 import comparisonData from '../../data/production_comparisons.json';
+import { comparisonJsonLd } from '../../lib/jsonld';
 import { SITE_NAME, SITE_URL } from '../../lib/site';
 import type { Comparison } from '../../lib/types';
 
@@ -92,10 +94,11 @@ export default function ComparisonPage({
 
   return (
     <main className="min-h-screen bg-[#1a1a1a] text-white">
+      <JsonLd data={comparisonJsonLd(comparison)} />
       <div className="border-b border-white/5">
         <div className="max-w-5xl mx-auto px-4 py-4 flex items-center gap-4 text-sm">
           <Link href="/" className="text-gray-500 hover:text-[#ff6600] transition">
-            StackClash
+            {SITE_NAME}
           </Link>
           <span className="text-gray-700">/</span>
           <Link
