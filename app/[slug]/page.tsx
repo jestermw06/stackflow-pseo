@@ -1,45 +1,73 @@
 import { notFound } from 'next/navigation';
-import fs from 'fs';
-import path from 'path';
+import type { Metadata } from 'next';
 import ComparisonTemplate from '../../components/ComparisonTemplate';
+import comparisonData from '../../data/production_comparisons.json';
+import type { Comparison } from '../../lib/types';
 
-// This function tells Next.js which paths to pre-render at build time.
+const comparisons = comparisonData as Comparison[];
+
 export async function generateStaticParams() {
-  const dataPath = path.join(process.cwd(), 'data', 'production_comparisons.json');
-  const fileContents = fs.readFileSync(dataPath, 'utf8');
-  const comparisons = JSON.parse(fileContents);
-
-  return comparisons.map((comparison: any) => ({
+  return comparisons.map((comparison) => ({
     slug: comparison.slug,
   }));
 }
 
-export default async function ComparisonPage({ params }: { params: { slug: string } }) {
-  const { slug } = params;
-  
-  // Load the data
-  const dataPath = path.join(process.cwd(), 'data', 'production_comparisons.json');
-  const fileContents = fs.readFileSync(dataPath, 'utf8');
-  const comparisons = JSON.parse(fileContents);
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
+  const comparison = comparisons.find((c) => c.slug === params.slug);
+  if (!comparison) {
+    return { title: 'Comparison Not Found | StackFlow' };
+  }
+  return {
+    title: `${comparison.title} | StackFlow`,
+    description:
+      comparison.verdictReason ||
+      `Compare ${comparison.softwareA?.name} vs ${comparison.softwareB?.name}.`,
+  };
+}
 
-  // Find the specific comparison matching this slug
-  const comparison = comparisons.find((c: any) => c.slug === slug);
+export default function ComparisonPage({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  const comparison = comparisons.find((c) => c.slug === params.slug);
 
   if (!comparison) {
     notFound();
   }
 
+  // Defensive defaults so missing fields never crash the build or page
+  const prosA = Array.isArray(comparison.prosA) ? comparison.prosA : [];
+  const consA = Array.isArray(comparison.consA) ? comparison.consA : [];
+  const prosB = Array.isArray(comparison.prosB) ? comparison.prosB : [];
+  const consB = Array.isArray(comparison.consB) ? comparison.consB : [];
+  const comparisonPoints = Array.isArray(comparison.comparisonPoints)
+    ? comparison.comparisonPoints
+    : [];
+
   return (
     <main className="min-h-screen bg-[#1a1a1a] text-white">
-      <ComparisonTemplate 
+      <div className="border-b border-white/5">
+        <div className="max-w-5xl mx-auto px-4 py-4">
+          <a href="/" className="text-sm text-gray-500 hover:text-[#ff6600] transition">
+            ← StackFlow
+          </a>
+        </div>
+      </div>
+      <ComparisonTemplate
         softwareA={comparison.softwareA}
         softwareB={comparison.softwareB}
         verdict={comparison.verdict}
         verdictReason={comparison.verdictReason}
-        prosA={comparison.pros_a}
-        consA={comparison.cons_a}
-        prosB={comparison.pros_b}
-        consB={comparison.cons_b}
+        prosA={prosA}
+        consA={consA}
+        prosB={prosB}
+        consB={consB}
+        comparisonPoints={comparisonPoints}
       />
     </main>
   );

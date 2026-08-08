@@ -1,11 +1,10 @@
-import { error } from 'next/navigation';
-
 export type AIProvider = 'openai' | 'xai' | 'anthropic';
 
 interface AIConfig {
   provider: AIProvider;
   apiKey: string;
   baseUrl?: string;
+  model?: string;
 }
 
 interface ChatResponse {
@@ -17,56 +16,58 @@ interface ChatResponse {
 }
 
 /**
- * The Multi-Brain Client handles requests to different LLM providers.
- * It is designed to be lightweight, using native fetch for maximum compatibility 
- * with Vercel Edge and Serverless environments.
+ * Multi-provider LLM client using native fetch (Edge / Serverless friendly).
+ * OpenAI-compatible providers (OpenAI, xAI) share one request shape.
  */
 export async function getAIResponse(
-  prompt: string, 
+  prompt: string,
   config: AIConfig
 ): Promise<ChatResponse> {
-  const { provider, apiKey, baseUrl } = config;
+  const { provider, apiKey, baseUrl, model } = config;
 
-  // 1. Handle xAI (Grok) - OpenAI Compatible
   if (provider === 'xai') {
-    return fetchXAIResponse(prompt, apiKey, baseUrl);
+    return fetchOpenAICompatibleResponse(
+      prompt,
+      apiKey,
+      baseUrl || 'https://api.x.ai/v1/chat/completions',
+      model || 'grok-3'
+    );
   }
 
-  // 2. Handle OpenAI - OpenAI Compatible
   if (provider === 'openai') {
-    return fetchOpenAIResponse(prompt, apiKey, baseUrl);
+    return fetchOpenAICompatibleResponse(
+      prompt,
+      apiKey,
+      baseUrl || 'https://api.openai.com/v1/chat/completions',
+      model || 'gpt-4o'
+    );
   }
 
-  // 3. Handle Anthropic - Note: This would require a different payload structure.
-  // For this phase, we implement the logic for the OpenAI-compatible providers.
   if (provider === 'anthropic') {
-    throw new Error("Anthropic provider is currently being implemented in the next sprint.");
+    throw new Error(
+      'Anthropic provider is not implemented yet. Use openai or xai.'
+    );
   }
 
   throw new Error(`Unsupported AI Provider: ${provider}`);
 }
 
-/**
- * Generic fetcher for OpenAI-compatible APIs (includes xAI/Grok)
- */
 async function fetchOpenAICompatibleResponse(
-  prompt: string, 
-  apiKey: string, 
-  baseUrl: string | undefined,
-  model: string = 'gpt-4o'
+  prompt: string,
+  apiKey: string,
+  url: string,
+  model: string
 ): Promise<ChatResponse> {
-  const url = baseUrl || 'https://api.openai.com/v1/chat/completions';
-
   const response = await fetch(url, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': `Bearer ${apiKey}`,
+      Authorization: `Bearer ${apiKey}`,
     },
     body: JSON.stringify({
-      model: model,
+      model,
       messages: [{ role: 'user', content: prompt }],
-      temperature: 0.2, // Low temperature for structured data reliability
+      temperature: 0.2,
     }),
   });
 
@@ -81,17 +82,6 @@ async function fetchOpenAICompatibleResponse(
     usage: {
       prompt_tokens: data.usage?.prompt_tokens || 0,
       completion_tokens: data.usage?.completion_tokens || 0,
-    }
+    },
   };
-}
-
-async function fetchXAIResponse(prompt: string, apiKey: string, baseUrl?: string): Promise<ChatResponse> {
-  // xAI uses the same structure as OpenAI but with its own endpoint
-  const xaiBaseUrl = baseUrl || 'https://api.x.ai/v1/chat/completions';
-  return fetchOpenAICompatibleResponse(prompt, apiKey, xaiBaseUrl, 'grok-4.5'); 
-}
-
-async function fetchOpenAIResponse(prompt: string, apiKey: string, baseUrl?: string): Promise<ChatResponse> {
-  const openAIBaseUrl = baseUrl || 'https://api.openai.com/v1/chat/completions';
-  return fetchOpenAICompatibleResponse(prompt, apiKey, openAIBaseUrl, 'gpt-4o');
 }

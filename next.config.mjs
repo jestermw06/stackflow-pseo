@@ -1,17 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  typescript: {
-    // !! WARN !!
-    // Dangerously allow production builds to successfully complete even if
-    // your project has type errors.
-    // !! WARN !!
-    ignoreBuildErrors: true,
-  },
-  eslint: {
-    // Warning: This allows production builds to successfully complete even if
-    // your project has ESLint errors.
-    ignoreDuringBuilds: true,
-  },
+  // Keep builds strict — do not paper over type/lint errors.
+  // If a future dependency causes type noise, prefer fixing types or
+  // skipLibCheck (already true in tsconfig) over ignoreBuildErrors.
 };
 
 export default nextConfig;
