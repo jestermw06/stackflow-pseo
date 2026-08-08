@@ -1,0 +1,262 @@
+[
+    {
+        "id": "hubspot",
+        "name": "HubSpot",
+        "category": "CRM/Marketing",
+        "description": "All-in-one inbound marketing, sales, and service platform.",
+        "key_features": [
+            "Contact Management",
+            "Email Marketing",
+            "Workflow Automation",
+            "Reporting"
+        ],
+        "official_url": "https://www.hubspot.com"
+    },
+    {
+        "id": "salesforce",
+        "name": "Salesforce",
+        "category": "CRM/Enterprise",
+        "description": "The world's leading cloud-based customer relationship management platform.",
+        "key_features": [
+            "Advanced Analytics",
+            "Sales Cloud",
+            "Marketing Cloud",
+            "Service Cloud"
+        ],
+        "official_url": "https://www.salesforce.com"
+    },
+    {
+        "id": "klaviyo",
+        "name": "Klaviyo",
+        "category": "Email/SMS Marketing",
+        "description": "Data-driven marketing automation platform focused on e-commerce.",
+        "key_features": [
+            "Segmentation",
+            "Predictive Analytics",
+            "SMS Marketing",
+            "E-commerce Integrations"
+        ],
+        "official_url": "https://www.klaviyo.com"
+    },
+    {
+        "id": "mailchimp",
+        "name": "Mailchimp",
+        "category": "Email Marketing",
+        "description": "Accessible email marketing and automation platform for small businesses.",
+        "key_features": [
+            "Email Templates",
+            "Audience Management",
+            "Automated Journeys",
+            "Ad Tools"
+        ],
+        "official_url": "https://www.mailchimp.com"
+    },
+    {
+        "id": "shopify",
+        "name": "Shopify",
+        "category": "E-commerce",
+        "description": "Leading global commerce platform for online stores and retail.",
+        "key_features": [
+            "Storefront Management",
+            "Payment Processing",
+            "Inventory Management",
+            "App Ecosystem"
+        ],
+        "official_url": "https://www.shopify.com"
+    },
+    {
+        "id": "woocommerce",
+        "name": "WooCommerce",
+        "category": "E-commerce",
+        "description": "Open-source e-commerce plugin for WordPress.",
+        "key_features": [
+            "Plugin Extensibility",
+            "WordPress Integration",
+            "Customizable Checkout",
+            "Large Community"
+        ],
+        "official_url": "https://woocommerce.com"
+    },
+    {
+        "id": "activecampaign",
+        "name": "ActiveCampaign",
+        "category": "Marketing Automation",
+        "description": "Advanced marketing automation and CRM for growing businesses.",
+        "key_features": [
+            "Visual Automations",
+            "Lead Scoring",
+            "Email Marketing",
+            "CRM Tools"
+        ],
+        "official_url": "https://www.activecampaign.com"
+    },
+    {
+        "id": "zapier",
+        "name": "Zapier",
+        "category": "Automation/Workflow",
+        "description": "No-code automation tool that connects thousands of apps.",
+        "key_features": [
+            "Multi-step Zaps",
+            "Trigger/Action Logic",
+            "Webhooks",
+            "App Directory"
+        ],
+        "official_url": "https://www.zapier.com"
+    },
+    {
+        "id": "make",
+        "name": "Make (formerly Integromat)",
+        "category": "Automation/Workflow",
+        "description": "Visual automation platform for complex workflows.",
+        "key_features": [
+            "Visual Builder",
+            "Complex Logic",
+            "Extensive Integrations",
+            "Data Manipulation"
+        ],
+        "official_url": "https://www.make.com"
+    },
+    {
+        "id": "zendesk",
+        "name": "Zendesk",
+        "category": "Customer Support/CRM",
+        "description": "Customer service software for managing support tickets and customer data.",
+        "key_features": [
+            "Ticketing System",
+            "Omnichannel Support",
+            "Knowledge Base",
+            "Reporting"
+        ],
+        "official_url": "https://www.zendesk.com"
+    },
+    {
+        "id": "pipedrive",
+        "name": "Pipedrive",
+        "category": "CRM/Sales",
+        "description": "Sales-focused CRM designed to help teams close deals faster.",
+        "key_features": [
+            "Visual Pipeline",
+            "Activity Reminders",
+            "Lead Management",
+            "Email Sync"
+        ],
+        "official_url": "https://www.pipedrive.com"
+    },
+    {
+        "id": "omnisend",
+        "name": "Omnisend",
+        "category": "E-commerce Marketing",
+        "description": "Multi-channel marketing automation for e-commerce brands.",
+        "key_features": [
+            "Email/SMS Automation",
+            "Push Notifications",
+            "Product Recommendations",
+            "Segmentation"
+        ],
+        "official_url": "https://www.omnisend.com"
+    },
+    {
+        "id": "brevo",
+        "name": "Brevo (formerly Sendinblue)",
+        "category": "Email/Marketing Automation",
+        "description": "All-in-one marketing platform for email, SMS, and WhatsApp.",
+        "key_features": [
+            "Transactional Email",
+            "SMS Marketing",
+            "CRM Lite",
+            "Landing Pages"
+        ],
+        "official_url": "https://www.brevo.com"
+    },
+    {
+        "id": "zoho_crm",
+        "name": "Zoho CRM",
+        "category": "CRM/Sales",
+        "description": "Comprehensive CRM for managing sales, marketing, and support.",
+        "key_features": [
+            "Workflow Automation",
+            "Analytics",
+            "Social CRM",
+            "Mobile App"
+        ],
+        "official_url": "https://www.zoho.com/crm"
+    },
+    {
+        "id": "klaviyo_sms",
+        "name": "Klaviyo SMS",
+        "category": "SMS Marketing",
+        "description": "Integrated SMS marketing for e-commerce brands.",
+        "key_features": [
+            "Automated SMS Flows",
+            "Two-way Messaging",
+            "Segmentation",
+            "Analytics"
+        ],
+        "official_url": "https://www.klaviyo.com"
+    },
+    {
+        "id": "typeform",
+        "name": "Typeform",
+        "category": "Forms/Lead Gen",
+        "description": "Interactive form builder for beautiful user experiences.",
+        "key_features": [
+            "Conversational Forms",
+            "Logic Jumps",
+            "Integrations",
+            "Analytics"
+        ],
+        "official_url": "https://www.typeform.com"
+    },
+    {
+        "id": "jotform",
+        "name": "Jotform",
+        "category": "Forms/Lead Gen",
+        "description": "Powerful online form builder with advanced logic.",
+        "key_features": [
+            "Conditional Logic",
+            "Payment Integration",
+            "Mobile Forms",
+            "Templates"
+        ],
+        "official_url": "https://www.jotform.com"
+    },
+    {
+        "id": "calendly",
+        "name": "Calendly",
+        "category": "Scheduling/Ops",
+        "description": "Automated scheduling tool to eliminate back-and-forth emails.",
+        "key_features": [
+            "Meeting Links",
+            "Calendar Sync",
+            "Workflow Automation",
+            "Integrations"
+        ],
+        "official_url": "https://www.calendly.com"
+    },
+    {
+        "id": "slack",
+        "name": "Slack",
+        "category": "Communication/Ops",
+        "description": "Business communication platform for team collaboration.",
+        "key_features": [
+            "Channels",
+            "App Integrations",
+            "Direct Messaging",
+            "Search"
+        ],
+        "official_url": "https://www.slack.com"
+    },
+    {
+        "id": "monday_com",
+        "name": "Monday.com",
+        "category": "Project Management/Ops",
+        "description": "Work OS for managing projects, workflows, and teams.",
+        "key_features": [
+            "Visual Boards",
+            "Automations",
+            "Integrations",
+            "Dashboards"
+        ],
+        "official_url": "https://www.monday.com"
+    }
+]

@@ -1,0 +1,2182 @@
+[
+    {
+        "slug": "make-vs-zapier",
+        "softwareA": {
+            "id": "make",
+            "name": "Make (formerly Integromat)",
+            "category": "Automation/Workflow",
+            "description": "Visual automation platform for complex workflows.",
+            "key_features": [
+                "Visual Builder",
+                "Complex Logic",
+                "Extensive Integrations",
+                "Data Manipulation"
+            ],
+            "official_url": "https://www.make.com"
+        },
+        "softwareB": {
+            "id": "zapier",
+            "name": "Zapier",
+            "category": "Automation/Workflow",
+            "description": "No-code automation tool that connects thousands of apps.",
+            "key_features": [
+                "Multi-step Zaps",
+                "Trigger/Action Logic",
+                "Webhooks",
+                "App Directory"
+            ],
+            "official_url": "https://www.zapier.com"
+        },
+        "verdict": "Zapier",
+        "verdictReason": "Zapier is the preferred choice for most users due to its specialized focus on Visual Builder.",
+        "comparison_points": [
+            {
+                "feature": "Data Manipulation",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Complex Logic",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Trigger/Action Logic",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Extensive Integrations",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Multi-step Zaps",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Webhooks",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Visual Builder",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "App Directory",
+                "software_a": false,
+                "software_b": true
+            }
+        ]
+    },
+    {
+        "slug": "shopify-vs-slack",
+        "softwareA": {
+            "id": "shopify",
+            "name": "Shopify",
+            "category": "E-commerce",
+            "description": "Leading global commerce platform for online stores and retail.",
+            "key_features": [
+                "Storefront Management",
+                "Payment Processing",
+                "Inventory Management",
+                "App Ecosystem"
+            ],
+            "official_url": "https://www.shopify.com"
+        },
+        "softwareB": {
+            "id": "slack",
+            "name": "Slack",
+            "category": "Communication/Ops",
+            "description": "Business communication platform for team collaboration.",
+            "key_features": [
+                "Channels",
+                "App Integrations",
+                "Direct Messaging",
+                "Search"
+            ],
+            "official_url": "https://www.slack.com"
+        },
+        "verdict": "Shopify",
+        "verdictReason": "Shopify is the preferred choice for most users due to its specialized focus on Payment Processing.",
+        "comparison_points": [
+            {
+                "feature": "App Ecosystem",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Inventory Management",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Storefront Management",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Direct Messaging",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "App Integrations",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Search",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Channels",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Payment Processing",
+                "software_a": true,
+                "software_b": false
+            }
+        ]
+    },
+    {
+        "slug": "zoho-crm-vs-omnisend",
+        "softwareA": {
+            "id": "zoho_crm",
+            "name": "Zoho CRM",
+            "category": "CRM/Sales",
+            "description": "Comprehensive CRM for managing sales, marketing, and support.",
+            "key_features": [
+                "Workflow Automation",
+                "Analytics",
+                "Social CRM",
+                "Mobile App"
+            ],
+            "official_url": "https://www.zoho.com/crm"
+        },
+        "softwareB": {
+            "id": "omnisend",
+            "name": "Omnisend",
+            "category": "E-commerce Marketing",
+            "description": "Multi-channel marketing automation for e-commerce brands.",
+            "key_features": [
+                "Email/SMS Automation",
+                "Push Notifications",
+                "Product Recommendations",
+                "Segmentation"
+            ],
+            "official_url": "https://www.omnisend.com"
+        },
+        "verdict": "Zoho CRM",
+        "verdictReason": "Zoho CRM is the preferred choice for most users due to its specialized focus on Mobile App.",
+        "comparison_points": [
+            {
+                "feature": "Social CRM",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Push Notifications",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Email/SMS Automation",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Mobile App",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Workflow Automation",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Analytics",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Segmentation",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Product Recommendations",
+                "software_a": false,
+                "software_b": true
+            }
+        ]
+    },
+    {
+        "slug": "woocommerce-vs-hubspot",
+        "softwareA": {
+            "id": "woocommerce",
+            "name": "WooCommerce",
+            "category": "E-commerce",
+            "description": "Open-source e-commerce plugin for WordPress.",
+            "key_features": [
+                "Plugin Extensibility",
+                "WordPress Integration",
+                "Customizable Checkout",
+                "Large Community"
+            ],
+            "official_url": "https://woocommerce.com"
+        },
+        "softwareB": {
+            "id": "hubspot",
+            "name": "HubSpot",
+            "category": "CRM/Marketing",
+            "description": "All-in-one inbound marketing, sales, and service platform.",
+            "key_features": [
+                "Contact Management",
+                "Email Marketing",
+                "Workflow Automation",
+                "Reporting"
+            ],
+            "official_url": "https://www.hubspot.com"
+        },
+        "verdict": "WooCommerce",
+        "verdictReason": "WooCommerce is the preferred choice for most users due to its specialized focus on Large Community.",
+        "comparison_points": [
+            {
+                "feature": "Customizable Checkout",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Plugin Extensibility",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Email Marketing",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Large Community",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Workflow Automation",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "WordPress Integration",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Contact Management",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Reporting",
+                "software_a": false,
+                "software_b": true
+            }
+        ]
+    },
+    {
+        "slug": "zapier-vs-make",
+        "softwareA": {
+            "id": "zapier",
+            "name": "Zapier",
+            "category": "Automation/Workflow",
+            "description": "No-code automation tool that connects thousands of apps.",
+            "key_features": [
+                "Multi-step Zaps",
+                "Trigger/Action Logic",
+                "Webhooks",
+                "App Directory"
+            ],
+            "official_url": "https://www.zapier.com"
+        },
+        "softwareB": {
+            "id": "make",
+            "name": "Make (formerly Integromat)",
+            "category": "Automation/Workflow",
+            "description": "Visual automation platform for complex workflows.",
+            "key_features": [
+                "Visual Builder",
+                "Complex Logic",
+                "Extensive Integrations",
+                "Data Manipulation"
+            ],
+            "official_url": "https://www.make.com"
+        },
+        "verdict": "Make (formerly Integromat)",
+        "verdictReason": "Make (formerly Integromat) is the preferred choice for most users due to its specialized focus on App Directory.",
+        "comparison_points": [
+            {
+                "feature": "Data Manipulation",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Complex Logic",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Trigger/Action Logic",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Extensive Integrations",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Multi-step Zaps",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Webhooks",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Visual Builder",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "App Directory",
+                "software_a": true,
+                "software_b": false
+            }
+        ]
+    },
+    {
+        "slug": "hubspot-vs-zoho-crm",
+        "softwareA": {
+            "id": "hubspot",
+            "name": "HubSpot",
+            "category": "CRM/Marketing",
+            "description": "All-in-one inbound marketing, sales, and service platform.",
+            "key_features": [
+                "Contact Management",
+                "Email Marketing",
+                "Workflow Automation",
+                "Reporting"
+            ],
+            "official_url": "https://www.hubspot.com"
+        },
+        "softwareB": {
+            "id": "zoho_crm",
+            "name": "Zoho CRM",
+            "category": "CRM/Sales",
+            "description": "Comprehensive CRM for managing sales, marketing, and support.",
+            "key_features": [
+                "Workflow Automation",
+                "Analytics",
+                "Social CRM",
+                "Mobile App"
+            ],
+            "official_url": "https://www.zoho.com/crm"
+        },
+        "verdict": "Zoho CRM",
+        "verdictReason": "Zoho CRM is the preferred choice for most users due to its specialized focus on Contact Management.",
+        "comparison_points": [
+            {
+                "feature": "Social CRM",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Mobile App",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Email Marketing",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Workflow Automation",
+                "software_a": true,
+                "software_b": true
+            },
+            {
+                "feature": "Analytics",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Contact Management",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Reporting",
+                "software_a": true,
+                "software_b": false
+            }
+        ]
+    },
+    {
+        "slug": "activecampaign-vs-zendesk",
+        "softwareA": {
+            "id": "activecampaign",
+            "name": "ActiveCampaign",
+            "category": "Marketing Automation",
+            "description": "Advanced marketing automation and CRM for growing businesses.",
+            "key_features": [
+                "Visual Automations",
+                "Lead Scoring",
+                "Email Marketing",
+                "CRM Tools"
+            ],
+            "official_url": "https://www.activecampaign.com"
+        },
+        "softwareB": {
+            "id": "zendesk",
+            "name": "Zendesk",
+            "category": "Customer Support/CRM",
+            "description": "Customer service software for managing support tickets and customer data.",
+            "key_features": [
+                "Ticketing System",
+                "Omnichannel Support",
+                "Knowledge Base",
+                "Reporting"
+            ],
+            "official_url": "https://www.zendesk.com"
+        },
+        "verdict": "Zendesk",
+        "verdictReason": "Zendesk is the preferred choice for most users due to its specialized focus on Reporting.",
+        "comparison_points": [
+            {
+                "feature": "Omnichannel Support",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Visual Automations",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Ticketing System",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Email Marketing",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Knowledge Base",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Lead Scoring",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "CRM Tools",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Reporting",
+                "software_a": false,
+                "software_b": true
+            }
+        ]
+    },
+    {
+        "slug": "klaviyo-vs-pipedrive",
+        "softwareA": {
+            "id": "klaviyo",
+            "name": "Klaviyo",
+            "category": "Email/SMS Marketing",
+            "description": "Data-driven marketing automation platform focused on e-commerce.",
+            "key_features": [
+                "Segmentation",
+                "Predictive Analytics",
+                "SMS Marketing",
+                "E-commerce Integrations"
+            ],
+            "official_url": "https://www.klaviyo.com"
+        },
+        "softwareB": {
+            "id": "pipedrive",
+            "name": "Pipedrive",
+            "category": "CRM/Sales",
+            "description": "Sales-focused CRM designed to help teams close deals faster.",
+            "key_features": [
+                "Visual Pipeline",
+                "Activity Reminders",
+                "Lead Management",
+                "Email Sync"
+            ],
+            "official_url": "https://www.pipedrive.com"
+        },
+        "verdict": "Klaviyo",
+        "verdictReason": "Klaviyo is the preferred choice for most users due to its specialized focus on Email Sync.",
+        "comparison_points": [
+            {
+                "feature": "Email Sync",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "E-commerce Integrations",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "SMS Marketing",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Activity Reminders",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Visual Pipeline",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Predictive Analytics",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Lead Management",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Segmentation",
+                "software_a": true,
+                "software_b": false
+            }
+        ]
+    },
+    {
+        "slug": "typeform-vs-woocommerce",
+        "softwareA": {
+            "id": "typeform",
+            "name": "Typeform",
+            "category": "Forms/Lead Gen",
+            "description": "Interactive form builder for beautiful user experiences.",
+            "key_features": [
+                "Conversational Forms",
+                "Logic Jumps",
+                "Integrations",
+                "Analytics"
+            ],
+            "official_url": "https://www.typeform.com"
+        },
+        "softwareB": {
+            "id": "woocommerce",
+            "name": "WooCommerce",
+            "category": "E-commerce",
+            "description": "Open-source e-commerce plugin for WordPress.",
+            "key_features": [
+                "Plugin Extensibility",
+                "WordPress Integration",
+                "Customizable Checkout",
+                "Large Community"
+            ],
+            "official_url": "https://woocommerce.com"
+        },
+        "verdict": "Typeform",
+        "verdictReason": "Typeform is the preferred choice for most users due to its specialized focus on WordPress Integration.",
+        "comparison_points": [
+            {
+                "feature": "Integrations",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Customizable Checkout",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Plugin Extensibility",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Large Community",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Conversational Forms",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Analytics",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "WordPress Integration",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Logic Jumps",
+                "software_a": true,
+                "software_b": false
+            }
+        ]
+    },
+    {
+        "slug": "slack-vs-make",
+        "softwareA": {
+            "id": "slack",
+            "name": "Slack",
+            "category": "Communication/Ops",
+            "description": "Business communication platform for team collaboration.",
+            "key_features": [
+                "Channels",
+                "App Integrations",
+                "Direct Messaging",
+                "Search"
+            ],
+            "official_url": "https://www.slack.com"
+        },
+        "softwareB": {
+            "id": "make",
+            "name": "Make (formerly Integromat)",
+            "category": "Automation/Workflow",
+            "description": "Visual automation platform for complex workflows.",
+            "key_features": [
+                "Visual Builder",
+                "Complex Logic",
+                "Extensive Integrations",
+                "Data Manipulation"
+            ],
+            "official_url": "https://www.make.com"
+        },
+        "verdict": "Slack",
+        "verdictReason": "Slack is the preferred choice for most users due to its specialized focus on Direct Messaging.",
+        "comparison_points": [
+            {
+                "feature": "Data Manipulation",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Direct Messaging",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "App Integrations",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Complex Logic",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Extensive Integrations",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Search",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Channels",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Visual Builder",
+                "software_a": false,
+                "software_b": true
+            }
+        ]
+    },
+    {
+        "slug": "slack-vs-woocommerce",
+        "softwareA": {
+            "id": "slack",
+            "name": "Slack",
+            "category": "Communication/Ops",
+            "description": "Business communication platform for team collaboration.",
+            "key_features": [
+                "Channels",
+                "App Integrations",
+                "Direct Messaging",
+                "Search"
+            ],
+            "official_url": "https://www.slack.com"
+        },
+        "softwareB": {
+            "id": "woocommerce",
+            "name": "WooCommerce",
+            "category": "E-commerce",
+            "description": "Open-source e-commerce plugin for WordPress.",
+            "key_features": [
+                "Plugin Extensibility",
+                "WordPress Integration",
+                "Customizable Checkout",
+                "Large Community"
+            ],
+            "official_url": "https://woocommerce.com"
+        },
+        "verdict": "WooCommerce",
+        "verdictReason": "WooCommerce is the preferred choice for most users due to its specialized focus on Large Community.",
+        "comparison_points": [
+            {
+                "feature": "Customizable Checkout",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Plugin Extensibility",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Large Community",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Direct Messaging",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "App Integrations",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "WordPress Integration",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Search",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Channels",
+                "software_a": true,
+                "software_b": false
+            }
+        ]
+    },
+    {
+        "slug": "zoho-crm-vs-brevo",
+        "softwareA": {
+            "id": "zoho_crm",
+            "name": "Zoho CRM",
+            "category": "CRM/Sales",
+            "description": "Comprehensive CRM for managing sales, marketing, and support.",
+            "key_features": [
+                "Workflow Automation",
+                "Analytics",
+                "Social CRM",
+                "Mobile App"
+            ],
+            "official_url": "https://www.zoho.com/crm"
+        },
+        "softwareB": {
+            "id": "brevo",
+            "name": "Brevo (formerly Sendinblue)",
+            "category": "Email/Marketing Automation",
+            "description": "All-in-one marketing platform for email, SMS, and WhatsApp.",
+            "key_features": [
+                "Transactional Email",
+                "SMS Marketing",
+                "CRM Lite",
+                "Landing Pages"
+            ],
+            "official_url": "https://www.brevo.com"
+        },
+        "verdict": "Brevo (formerly Sendinblue)",
+        "verdictReason": "Brevo (formerly Sendinblue) is the preferred choice for most users due to its specialized focus on Transactional Email.",
+        "comparison_points": [
+            {
+                "feature": "Social CRM",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Landing Pages",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Mobile App",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "SMS Marketing",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "CRM Lite",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Workflow Automation",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Analytics",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Transactional Email",
+                "software_a": false,
+                "software_b": true
+            }
+        ]
+    },
+    {
+        "slug": "zoho-crm-vs-activecampaign",
+        "softwareA": {
+            "id": "zoho_crm",
+            "name": "Zoho CRM",
+            "category": "CRM/Sales",
+            "description": "Comprehensive CRM for managing sales, marketing, and support.",
+            "key_features": [
+                "Workflow Automation",
+                "Analytics",
+                "Social CRM",
+                "Mobile App"
+            ],
+            "official_url": "https://www.zoho.com/crm"
+        },
+        "softwareB": {
+            "id": "activecampaign",
+            "name": "ActiveCampaign",
+            "category": "Marketing Automation",
+            "description": "Advanced marketing automation and CRM for growing businesses.",
+            "key_features": [
+                "Visual Automations",
+                "Lead Scoring",
+                "Email Marketing",
+                "CRM Tools"
+            ],
+            "official_url": "https://www.activecampaign.com"
+        },
+        "verdict": "ActiveCampaign",
+        "verdictReason": "ActiveCampaign is the preferred choice for most users due to its specialized focus on Visual Automations.",
+        "comparison_points": [
+            {
+                "feature": "Social CRM",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Visual Automations",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Mobile App",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Email Marketing",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Workflow Automation",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Analytics",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Lead Scoring",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "CRM Tools",
+                "software_a": false,
+                "software_b": true
+            }
+        ]
+    },
+    {
+        "slug": "zapier-vs-klaviyo-sms",
+        "softwareA": {
+            "id": "zapier",
+            "name": "Zapier",
+            "category": "Automation/Workflow",
+            "description": "No-code automation tool that connects thousands of apps.",
+            "key_features": [
+                "Multi-step Zaps",
+                "Trigger/Action Logic",
+                "Webhooks",
+                "App Directory"
+            ],
+            "official_url": "https://www.zapier.com"
+        },
+        "softwareB": {
+            "id": "klaviyo_sms",
+            "name": "Klaviyo SMS",
+            "category": "SMS Marketing",
+            "description": "Integrated SMS marketing for e-commerce brands.",
+            "key_features": [
+                "Automated SMS Flows",
+                "Two-way Messaging",
+                "Segmentation",
+                "Analytics"
+            ],
+            "official_url": "https://www.klaviyo.com"
+        },
+        "verdict": "Zapier",
+        "verdictReason": "Zapier is the preferred choice for most users due to its specialized focus on Segmentation.",
+        "comparison_points": [
+            {
+                "feature": "Segmentation",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Two-way Messaging",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Analytics",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Trigger/Action Logic",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Multi-step Zaps",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Automated SMS Flows",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Webhooks",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "App Directory",
+                "software_a": true,
+                "software_b": false
+            }
+        ]
+    },
+    {
+        "slug": "klaviyo-vs-zapier",
+        "softwareA": {
+            "id": "klaviyo",
+            "name": "Klaviyo",
+            "category": "Email/SMS Marketing",
+            "description": "Data-driven marketing automation platform focused on e-commerce.",
+            "key_features": [
+                "Segmentation",
+                "Predictive Analytics",
+                "SMS Marketing",
+                "E-commerce Integrations"
+            ],
+            "official_url": "https://www.klaviyo.com"
+        },
+        "softwareB": {
+            "id": "zapier",
+            "name": "Zapier",
+            "category": "Automation/Workflow",
+            "description": "No-code automation tool that connects thousands of apps.",
+            "key_features": [
+                "Multi-step Zaps",
+                "Trigger/Action Logic",
+                "Webhooks",
+                "App Directory"
+            ],
+            "official_url": "https://www.zapier.com"
+        },
+        "verdict": "Klaviyo",
+        "verdictReason": "Klaviyo is the preferred choice for most users due to its specialized focus on Trigger/Action Logic.",
+        "comparison_points": [
+            {
+                "feature": "E-commerce Integrations",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "SMS Marketing",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Predictive Analytics",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Webhooks",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Trigger/Action Logic",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Multi-step Zaps",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Segmentation",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "App Directory",
+                "software_a": false,
+                "software_b": true
+            }
+        ]
+    },
+    {
+        "slug": "woocommerce-vs-activecampaign",
+        "softwareA": {
+            "id": "woocommerce",
+            "name": "WooCommerce",
+            "category": "E-commerce",
+            "description": "Open-source e-commerce plugin for WordPress.",
+            "key_features": [
+                "Plugin Extensibility",
+                "WordPress Integration",
+                "Customizable Checkout",
+                "Large Community"
+            ],
+            "official_url": "https://woocommerce.com"
+        },
+        "softwareB": {
+            "id": "activecampaign",
+            "name": "ActiveCampaign",
+            "category": "Marketing Automation",
+            "description": "Advanced marketing automation and CRM for growing businesses.",
+            "key_features": [
+                "Visual Automations",
+                "Lead Scoring",
+                "Email Marketing",
+                "CRM Tools"
+            ],
+            "official_url": "https://www.activecampaign.com"
+        },
+        "verdict": "WooCommerce",
+        "verdictReason": "WooCommerce is the preferred choice for most users due to its specialized focus on Visual Automations.",
+        "comparison_points": [
+            {
+                "feature": "Customizable Checkout",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Plugin Extensibility",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Visual Automations",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Email Marketing",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Large Community",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "WordPress Integration",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Lead Scoring",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "CRM Tools",
+                "software_a": false,
+                "software_b": true
+            }
+        ]
+    },
+    {
+        "slug": "mailchimp-vs-slack",
+        "softwareA": {
+            "id": "mailchimp",
+            "name": "Mailchimp",
+            "category": "Email Marketing",
+            "description": "Accessible email marketing and automation platform for small businesses.",
+            "key_features": [
+                "Email Templates",
+                "Audience Management",
+                "Automated Journeys",
+                "Ad Tools"
+            ],
+            "official_url": "https://www.mailchimp.com"
+        },
+        "softwareB": {
+            "id": "slack",
+            "name": "Slack",
+            "category": "Communication/Ops",
+            "description": "Business communication platform for team collaboration.",
+            "key_features": [
+                "Channels",
+                "App Integrations",
+                "Direct Messaging",
+                "Search"
+            ],
+            "official_url": "https://www.slack.com"
+        },
+        "verdict": "Slack",
+        "verdictReason": "Slack is the preferred choice for most users due to its specialized focus on Direct Messaging.",
+        "comparison_points": [
+            {
+                "feature": "Ad Tools",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Audience Management",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Email Templates",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Direct Messaging",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "App Integrations",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Search",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Automated Journeys",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Channels",
+                "software_a": false,
+                "software_b": true
+            }
+        ]
+    },
+    {
+        "slug": "jotform-vs-brevo",
+        "softwareA": {
+            "id": "jotform",
+            "name": "Jotform",
+            "category": "Forms/Lead Gen",
+            "description": "Powerful online form builder with advanced logic.",
+            "key_features": [
+                "Conditional Logic",
+                "Payment Integration",
+                "Mobile Forms",
+                "Templates"
+            ],
+            "official_url": "https://www.jotform.com"
+        },
+        "softwareB": {
+            "id": "brevo",
+            "name": "Brevo (formerly Sendinblue)",
+            "category": "Email/Marketing Automation",
+            "description": "All-in-one marketing platform for email, SMS, and WhatsApp.",
+            "key_features": [
+                "Transactional Email",
+                "SMS Marketing",
+                "CRM Lite",
+                "Landing Pages"
+            ],
+            "official_url": "https://www.brevo.com"
+        },
+        "verdict": "Brevo (formerly Sendinblue)",
+        "verdictReason": "Brevo (formerly Sendinblue) is the preferred choice for most users due to its specialized focus on SMS Marketing.",
+        "comparison_points": [
+            {
+                "feature": "Landing Pages",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Mobile Forms",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Templates",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "SMS Marketing",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "CRM Lite",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Payment Integration",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Conditional Logic",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Transactional Email",
+                "software_a": false,
+                "software_b": true
+            }
+        ]
+    },
+    {
+        "slug": "make-vs-klaviyo",
+        "softwareA": {
+            "id": "make",
+            "name": "Make (formerly Integromat)",
+            "category": "Automation/Workflow",
+            "description": "Visual automation platform for complex workflows.",
+            "key_features": [
+                "Visual Builder",
+                "Complex Logic",
+                "Extensive Integrations",
+                "Data Manipulation"
+            ],
+            "official_url": "https://www.make.com"
+        },
+        "softwareB": {
+            "id": "klaviyo",
+            "name": "Klaviyo",
+            "category": "Email/SMS Marketing",
+            "description": "Data-driven marketing automation platform focused on e-commerce.",
+            "key_features": [
+                "Segmentation",
+                "Predictive Analytics",
+                "SMS Marketing",
+                "E-commerce Integrations"
+            ],
+            "official_url": "https://www.klaviyo.com"
+        },
+        "verdict": "Make (formerly Integromat)",
+        "verdictReason": "Make (formerly Integromat) is the preferred choice for most users due to its specialized focus on Extensive Integrations.",
+        "comparison_points": [
+            {
+                "feature": "Data Manipulation",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "E-commerce Integrations",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "SMS Marketing",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Complex Logic",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Predictive Analytics",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Extensive Integrations",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Segmentation",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Visual Builder",
+                "software_a": true,
+                "software_b": false
+            }
+        ]
+    },
+    {
+        "slug": "mailchimp-vs-zendesk",
+        "softwareA": {
+            "id": "mailchimp",
+            "name": "Mailchimp",
+            "category": "Email Marketing",
+            "description": "Accessible email marketing and automation platform for small businesses.",
+            "key_features": [
+                "Email Templates",
+                "Audience Management",
+                "Automated Journeys",
+                "Ad Tools"
+            ],
+            "official_url": "https://www.mailchimp.com"
+        },
+        "softwareB": {
+            "id": "zendesk",
+            "name": "Zendesk",
+            "category": "Customer Support/CRM",
+            "description": "Customer service software for managing support tickets and customer data.",
+            "key_features": [
+                "Ticketing System",
+                "Omnichannel Support",
+                "Knowledge Base",
+                "Reporting"
+            ],
+            "official_url": "https://www.zendesk.com"
+        },
+        "verdict": "Zendesk",
+        "verdictReason": "Zendesk is the preferred choice for most users due to its specialized focus on Knowledge Base.",
+        "comparison_points": [
+            {
+                "feature": "Omnichannel Support",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Ad Tools",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Ticketing System",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Audience Management",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Email Templates",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Automated Journeys",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Knowledge Base",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Reporting",
+                "software_a": false,
+                "software_b": true
+            }
+        ]
+    },
+    {
+        "slug": "hubspot-vs-zendesk",
+        "softwareA": {
+            "id": "hubspot",
+            "name": "HubSpot",
+            "category": "CRM/Marketing",
+            "description": "All-in-one inbound marketing, sales, and service platform.",
+            "key_features": [
+                "Contact Management",
+                "Email Marketing",
+                "Workflow Automation",
+                "Reporting"
+            ],
+            "official_url": "https://www.hubspot.com"
+        },
+        "softwareB": {
+            "id": "zendesk",
+            "name": "Zendesk",
+            "category": "Customer Support/CRM",
+            "description": "Customer service software for managing support tickets and customer data.",
+            "key_features": [
+                "Ticketing System",
+                "Omnichannel Support",
+                "Knowledge Base",
+                "Reporting"
+            ],
+            "official_url": "https://www.zendesk.com"
+        },
+        "verdict": "HubSpot",
+        "verdictReason": "HubSpot is the preferred choice for most users due to its specialized focus on Workflow Automation.",
+        "comparison_points": [
+            {
+                "feature": "Omnichannel Support",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Ticketing System",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Email Marketing",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Workflow Automation",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Contact Management",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Knowledge Base",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Reporting",
+                "software_a": true,
+                "software_b": true
+            }
+        ]
+    },
+    {
+        "slug": "klaviyo-vs-mailchimp",
+        "softwareA": {
+            "id": "klaviyo",
+            "name": "Klaviyo",
+            "category": "Email/SMS Marketing",
+            "description": "Data-driven marketing automation platform focused on e-commerce.",
+            "key_features": [
+                "Segmentation",
+                "Predictive Analytics",
+                "SMS Marketing",
+                "E-commerce Integrations"
+            ],
+            "official_url": "https://www.klaviyo.com"
+        },
+        "softwareB": {
+            "id": "mailchimp",
+            "name": "Mailchimp",
+            "category": "Email Marketing",
+            "description": "Accessible email marketing and automation platform for small businesses.",
+            "key_features": [
+                "Email Templates",
+                "Audience Management",
+                "Automated Journeys",
+                "Ad Tools"
+            ],
+            "official_url": "https://www.mailchimp.com"
+        },
+        "verdict": "Klaviyo",
+        "verdictReason": "Klaviyo is the preferred choice for most users due to its specialized focus on E-commerce Integrations.",
+        "comparison_points": [
+            {
+                "feature": "Ad Tools",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "E-commerce Integrations",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "SMS Marketing",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Email Templates",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Audience Management",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Predictive Analytics",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Automated Journeys",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Segmentation",
+                "software_a": true,
+                "software_b": false
+            }
+        ]
+    },
+    {
+        "slug": "slack-vs-activecampaign",
+        "softwareA": {
+            "id": "slack",
+            "name": "Slack",
+            "category": "Communication/Ops",
+            "description": "Business communication platform for team collaboration.",
+            "key_features": [
+                "Channels",
+                "App Integrations",
+                "Direct Messaging",
+                "Search"
+            ],
+            "official_url": "https://www.slack.com"
+        },
+        "softwareB": {
+            "id": "activecampaign",
+            "name": "ActiveCampaign",
+            "category": "Marketing Automation",
+            "description": "Advanced marketing automation and CRM for growing businesses.",
+            "key_features": [
+                "Visual Automations",
+                "Lead Scoring",
+                "Email Marketing",
+                "CRM Tools"
+            ],
+            "official_url": "https://www.activecampaign.com"
+        },
+        "verdict": "ActiveCampaign",
+        "verdictReason": "ActiveCampaign is the preferred choice for most users due to its specialized focus on Visual Automations.",
+        "comparison_points": [
+            {
+                "feature": "Visual Automations",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Email Marketing",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Direct Messaging",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "App Integrations",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Search",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Channels",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Lead Scoring",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "CRM Tools",
+                "software_a": false,
+                "software_b": true
+            }
+        ]
+    },
+    {
+        "slug": "woocommerce-vs-klaviyo-sms",
+        "softwareA": {
+            "id": "woocommerce",
+            "name": "WooCommerce",
+            "category": "E-commerce",
+            "description": "Open-source e-commerce plugin for WordPress.",
+            "key_features": [
+                "Plugin Extensibility",
+                "WordPress Integration",
+                "Customizable Checkout",
+                "Large Community"
+            ],
+            "official_url": "https://woocommerce.com"
+        },
+        "softwareB": {
+            "id": "klaviyo_sms",
+            "name": "Klaviyo SMS",
+            "category": "SMS Marketing",
+            "description": "Integrated SMS marketing for e-commerce brands.",
+            "key_features": [
+                "Automated SMS Flows",
+                "Two-way Messaging",
+                "Segmentation",
+                "Analytics"
+            ],
+            "official_url": "https://www.klaviyo.com"
+        },
+        "verdict": "WooCommerce",
+        "verdictReason": "WooCommerce is the preferred choice for most users due to its specialized focus on Plugin Extensibility.",
+        "comparison_points": [
+            {
+                "feature": "Customizable Checkout",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Plugin Extensibility",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Two-way Messaging",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Large Community",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Analytics",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "WordPress Integration",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Automated SMS Flows",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Segmentation",
+                "software_a": false,
+                "software_b": true
+            }
+        ]
+    },
+    {
+        "slug": "shopify-vs-make",
+        "softwareA": {
+            "id": "shopify",
+            "name": "Shopify",
+            "category": "E-commerce",
+            "description": "Leading global commerce platform for online stores and retail.",
+            "key_features": [
+                "Storefront Management",
+                "Payment Processing",
+                "Inventory Management",
+                "App Ecosystem"
+            ],
+            "official_url": "https://www.shopify.com"
+        },
+        "softwareB": {
+            "id": "make",
+            "name": "Make (formerly Integromat)",
+            "category": "Automation/Workflow",
+            "description": "Visual automation platform for complex workflows.",
+            "key_features": [
+                "Visual Builder",
+                "Complex Logic",
+                "Extensive Integrations",
+                "Data Manipulation"
+            ],
+            "official_url": "https://www.make.com"
+        },
+        "verdict": "Shopify",
+        "verdictReason": "Shopify is the preferred choice for most users due to its specialized focus on Inventory Management.",
+        "comparison_points": [
+            {
+                "feature": "App Ecosystem",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Data Manipulation",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Inventory Management",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Storefront Management",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Complex Logic",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Extensive Integrations",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Visual Builder",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Payment Processing",
+                "software_a": true,
+                "software_b": false
+            }
+        ]
+    },
+    {
+        "slug": "klaviyo-sms-vs-brevo",
+        "softwareA": {
+            "id": "klaviyo_sms",
+            "name": "Klaviyo SMS",
+            "category": "SMS Marketing",
+            "description": "Integrated SMS marketing for e-commerce brands.",
+            "key_features": [
+                "Automated SMS Flows",
+                "Two-way Messaging",
+                "Segmentation",
+                "Analytics"
+            ],
+            "official_url": "https://www.klaviyo.com"
+        },
+        "softwareB": {
+            "id": "brevo",
+            "name": "Brevo (formerly Sendinblue)",
+            "category": "Email/Marketing Automation",
+            "description": "All-in-one marketing platform for email, SMS, and WhatsApp.",
+            "key_features": [
+                "Transactional Email",
+                "SMS Marketing",
+                "CRM Lite",
+                "Landing Pages"
+            ],
+            "official_url": "https://www.brevo.com"
+        },
+        "verdict": "Brevo (formerly Sendinblue)",
+        "verdictReason": "Brevo (formerly Sendinblue) is the preferred choice for most users due to its specialized focus on SMS Marketing.",
+        "comparison_points": [
+            {
+                "feature": "Landing Pages",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Two-way Messaging",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "SMS Marketing",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "CRM Lite",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Analytics",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Automated SMS Flows",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Segmentation",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Transactional Email",
+                "software_a": false,
+                "software_b": true
+            }
+        ]
+    },
+    {
+        "slug": "shopify-vs-activecampaign",
+        "softwareA": {
+            "id": "shopify",
+            "name": "Shopify",
+            "category": "E-commerce",
+            "description": "Leading global commerce platform for online stores and retail.",
+            "key_features": [
+                "Storefront Management",
+                "Payment Processing",
+                "Inventory Management",
+                "App Ecosystem"
+            ],
+            "official_url": "https://www.shopify.com"
+        },
+        "softwareB": {
+            "id": "activecampaign",
+            "name": "ActiveCampaign",
+            "category": "Marketing Automation",
+            "description": "Advanced marketing automation and CRM for growing businesses.",
+            "key_features": [
+                "Visual Automations",
+                "Lead Scoring",
+                "Email Marketing",
+                "CRM Tools"
+            ],
+            "official_url": "https://www.activecampaign.com"
+        },
+        "verdict": "Shopify",
+        "verdictReason": "Shopify is the preferred choice for most users due to its specialized focus on Lead Scoring.",
+        "comparison_points": [
+            {
+                "feature": "App Ecosystem",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Visual Automations",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Inventory Management",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Storefront Management",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Email Marketing",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Lead Scoring",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "CRM Tools",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Payment Processing",
+                "software_a": true,
+                "software_b": false
+            }
+        ]
+    },
+    {
+        "slug": "salesforce-vs-pipedrive",
+        "softwareA": {
+            "id": "salesforce",
+            "name": "Salesforce",
+            "category": "CRM/Enterprise",
+            "description": "The world's leading cloud-based customer relationship management platform.",
+            "key_features": [
+                "Advanced Analytics",
+                "Sales Cloud",
+                "Marketing Cloud",
+                "Service Cloud"
+            ],
+            "official_url": "https://www.salesforce.com"
+        },
+        "softwareB": {
+            "id": "pipedrive",
+            "name": "Pipedrive",
+            "category": "CRM/Sales",
+            "description": "Sales-focused CRM designed to help teams close deals faster.",
+            "key_features": [
+                "Visual Pipeline",
+                "Activity Reminders",
+                "Lead Management",
+                "Email Sync"
+            ],
+            "official_url": "https://www.pipedrive.com"
+        },
+        "verdict": "Salesforce",
+        "verdictReason": "Salesforce is the preferred choice for most users due to its specialized focus on Activity Reminders.",
+        "comparison_points": [
+            {
+                "feature": "Advanced Analytics",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Email Sync",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Marketing Cloud",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Activity Reminders",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Visual Pipeline",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Lead Management",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Sales Cloud",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Service Cloud",
+                "software_a": true,
+                "software_b": false
+            }
+        ]
+    },
+    {
+        "slug": "mailchimp-vs-salesforce",
+        "softwareA": {
+            "id": "mailchimp",
+            "name": "Mailchimp",
+            "category": "Email Marketing",
+            "description": "Accessible email marketing and automation platform for small businesses.",
+            "key_features": [
+                "Email Templates",
+                "Audience Management",
+                "Automated Journeys",
+                "Ad Tools"
+            ],
+            "official_url": "https://www.mailchimp.com"
+        },
+        "softwareB": {
+            "id": "salesforce",
+            "name": "Salesforce",
+            "category": "CRM/Enterprise",
+            "description": "The world's leading cloud-based customer relationship management platform.",
+            "key_features": [
+                "Advanced Analytics",
+                "Sales Cloud",
+                "Marketing Cloud",
+                "Service Cloud"
+            ],
+            "official_url": "https://www.salesforce.com"
+        },
+        "verdict": "Salesforce",
+        "verdictReason": "Salesforce is the preferred choice for most users due to its specialized focus on Automated Journeys.",
+        "comparison_points": [
+            {
+                "feature": "Advanced Analytics",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Ad Tools",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Marketing Cloud",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Audience Management",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Email Templates",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Sales Cloud",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Automated Journeys",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Service Cloud",
+                "software_a": false,
+                "software_b": true
+            }
+        ]
+    },
+    {
+        "slug": "pipedrive-vs-zapier",
+        "softwareA": {
+            "id": "pipedrive",
+            "name": "Pipedrive",
+            "category": "CRM/Sales",
+            "description": "Sales-focused CRM designed to help teams close deals faster.",
+            "key_features": [
+                "Visual Pipeline",
+                "Activity Reminders",
+                "Lead Management",
+                "Email Sync"
+            ],
+            "official_url": "https://www.pipedrive.com"
+        },
+        "softwareB": {
+            "id": "zapier",
+            "name": "Zapier",
+            "category": "Automation/Workflow",
+            "description": "No-code automation tool that connects thousands of apps.",
+            "key_features": [
+                "Multi-step Zaps",
+                "Trigger/Action Logic",
+                "Webhooks",
+                "App Directory"
+            ],
+            "official_url": "https://www.zapier.com"
+        },
+        "verdict": "Pipedrive",
+        "verdictReason": "Pipedrive is the preferred choice for most users due to its specialized focus on Trigger/Action Logic.",
+        "comparison_points": [
+            {
+                "feature": "Email Sync",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Activity Reminders",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Visual Pipeline",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Trigger/Action Logic",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Lead Management",
+                "software_a": true,
+                "software_b": false
+            },
+            {
+                "feature": "Multi-step Zaps",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "Webhooks",
+                "software_a": false,
+                "software_b": true
+            },
+            {
+                "feature": "App Directory",
+                "software_a": false,
+                "software_b": true
+            }
+        ]
+    }
+]
