@@ -73,6 +73,11 @@ CURATED_PAIRS: list[tuple[str, str]] = [
     ("hubspot", "intercom"),
     # Project management
     ("monday_com", "asana"),
+    # Extra high-intent volume
+    ("hubspot", "mailchimp"),
+    ("activecampaign", "kit"),
+    ("kit", "brevo"),
+    ("customer_io", "brevo"),
 ]
 
 # Flagship hand-authored content keyed by "id_a-vs-id_b" (slug may differ)
@@ -620,6 +625,487 @@ FLAGSHIPS: dict[str, dict] = {
         "consB": [
             "Steeper for pure retail marketers",
             "Less out-of-box Shopify polish than Klaviyo",
+        ],
+    },
+    # --- upgraded from curated ---
+    "activecampaign-vs-brevo": {
+        "verdict": "ActiveCampaign",
+        "verdictReason": "ActiveCampaign wins for automation-heavy CRM marketing; Brevo wins when affordable multi-channel (email, SMS, WhatsApp) is the priority.",
+        "comparisonPoints": [
+            {"feature": "Advanced marketing automation", "softwareA": True, "softwareB": True},
+            {"feature": "CRM + lead scoring depth", "softwareA": True, "softwareB": False},
+            {"feature": "Transactional email strength", "softwareA": False, "softwareB": True},
+            {"feature": "WhatsApp / broad SMS pricing appeal", "softwareA": False, "softwareB": True},
+            {"feature": "Visual nurture builders", "softwareA": True, "softwareB": True},
+            {"feature": "Landing pages included", "softwareA": True, "softwareB": True},
+        ],
+        "prosA": [
+            "Strong automation + CRM for growing sales teams",
+            "Lead scoring and pipeline-aware marketing",
+            "Mature visual automation experience",
+        ],
+        "consA": [
+            "Can cost more as contacts and seats grow",
+            "Less of a budget multi-channel SMS/WhatsApp play",
+        ],
+        "prosB": [
+            "Attractive multi-channel pricing for SMBs",
+            "Solid transactional email and CRM-lite",
+            "Easy entry for email + SMS + WhatsApp",
+        ],
+        "consB": [
+            "Automation depth trails ActiveCampaign at the high end",
+            "CRM is lighter for complex sales orgs",
+        ],
+    },
+    "activecampaign-vs-customer-io": {
+        "verdict": "ActiveCampaign",
+        "verdictReason": "ActiveCampaign wins for marketing teams that want CRM + automation UI; Customer.io wins for event-driven product messaging owned by growth eng.",
+        "comparisonPoints": [
+            {"feature": "Marketer-friendly CRM automation", "softwareA": True, "softwareB": False},
+            {"feature": "Behavioral event engine", "softwareA": True, "softwareB": True},
+            {"feature": "Lead scoring & sales CRM", "softwareA": True, "softwareB": False},
+            {"feature": "Developer-centric APIs & data model", "softwareA": False, "softwareB": True},
+            {"feature": "Email automation journeys", "softwareA": True, "softwareB": True},
+            {"feature": "Product/app messaging focus", "softwareA": False, "softwareB": True},
+        ],
+        "prosA": [
+            "Familiar automation UI for marketing ops",
+            "CRM features for sales-assisted funnels",
+            "Faster for non-technical campaign owners",
+        ],
+        "consA": [
+            "Less flexible as a pure event/product message bus",
+            "Not built first for in-app product messaging",
+        ],
+        "prosB": [
+            "Excellent event-triggered multi-channel logic",
+            "Fits product-led and engineering-led stacks",
+            "Powerful segment and trigger control",
+        ],
+        "consB": [
+            "Steeper for classic inbound marketing teams",
+            "Weaker out-of-box CRM sales workflow",
+        ],
+    },
+    "activecampaign-vs-klaviyo": {
+        "verdict": "Klaviyo",
+        "verdictReason": "Klaviyo wins for e-commerce revenue automation; ActiveCampaign wins for B2B/service businesses needing CRM + nurture beyond retail.",
+        "comparisonPoints": [
+            {"feature": "E-commerce data & catalog sync", "softwareA": False, "softwareB": True},
+            {"feature": "B2B CRM + lead scoring", "softwareA": True, "softwareB": False},
+            {"feature": "SMS with shared profiles", "softwareA": True, "softwareB": True},
+            {"feature": "Visual automation builder", "softwareA": True, "softwareB": True},
+            {"feature": "Predictive retail analytics", "softwareA": False, "softwareB": True},
+            {"feature": "Sales pipeline CRM features", "softwareA": True, "softwareB": False},
+        ],
+        "prosA": [
+            "Better fit for B2B and service funnels",
+            "CRM-aware automations and scoring",
+            "Strong multi-step nurture without a full HubSpot suite",
+        ],
+        "consA": [
+            "Weaker native retail product intelligence",
+            "Not the default for pure DTC brands",
+        ],
+        "prosB": [
+            "Best-in-class store and profile data for online retail",
+            "Flows that map to browse, cart, and LTV",
+            "SMS + email on commerce-grade identity",
+        ],
+        "consB": [
+            "Overkill or misaligned for non-commerce B2B",
+            "Contact-based pricing can sting at scale",
+        ],
+    },
+    "activecampaign-vs-omnisend": {
+        "verdict": "Omnisend",
+        "verdictReason": "Omnisend wins for multi-channel e-commerce (email, SMS, push); ActiveCampaign wins when CRM automation outside pure retail is required.",
+        "comparisonPoints": [
+            {"feature": "E-commerce multi-channel (email/SMS/push)", "softwareA": False, "softwareB": True},
+            {"feature": "CRM + sales automation", "softwareA": True, "softwareB": False},
+            {"feature": "Product recommendations", "softwareA": False, "softwareB": True},
+            {"feature": "Lead scoring", "softwareA": True, "softwareB": False},
+            {"feature": "Visual automations", "softwareA": True, "softwareB": True},
+            {"feature": "Shopify-first journeys", "softwareA": False, "softwareB": True},
+        ],
+        "prosA": [
+            "CRM depth for mixed marketing/sales teams",
+            "Flexible automation beyond store events",
+            "Strong mid-market automation value",
+        ],
+        "consA": [
+            "Less specialized for product-aware retail channels",
+            "Push/SMS commerce tooling trails Omnisend",
+        ],
+        "prosB": [
+            "Purpose-built for online stores",
+            "Email + SMS + push without bolting tools on",
+            "Commerce templates that convert faster to launch",
+        ],
+        "consB": [
+            "Not a full B2B CRM platform",
+            "Weaker for non-retail lead pipelines",
+        ],
+    },
+    "activecampaign-vs-pipedrive": {
+        "verdict": "ActiveCampaign",
+        "verdictReason": "ActiveCampaign wins when marketing automation must drive the pipeline; Pipedrive wins for pure sales execution without heavy marketing.",
+        "comparisonPoints": [
+            {"feature": "Marketing automation engine", "softwareA": True, "softwareB": False},
+            {"feature": "Visual sales pipeline", "softwareA": True, "softwareB": True},
+            {"feature": "Lead scoring", "softwareA": True, "softwareB": False},
+            {"feature": "Sales-first activity UX", "softwareA": False, "softwareB": True},
+            {"feature": "Email nurture sequences", "softwareA": True, "softwareB": False},
+            {"feature": "Deal hygiene & reminders", "softwareA": True, "softwareB": True},
+        ],
+        "prosA": [
+            "Combines automation and CRM for inbound + sales",
+            "Better for marketing-sourced pipeline",
+            "One tool instead of ESP + CRM stitch",
+        ],
+        "consA": [
+            "Sales UX is good, not as pure as Pipedrive",
+            "Marketers may own the tool more than reps",
+        ],
+        "prosB": [
+            "Pipeline CRM that sales teams adopt quickly",
+            "Clean deal and activity focus",
+            "Less complexity if marketing lives elsewhere",
+        ],
+        "consB": [
+            "Needs a separate marketing automation stack",
+            "Limited native nurture sophistication",
+        ],
+    },
+    "activecampaign-vs-zoho-crm": {
+        "verdict": "ActiveCampaign",
+        "verdictReason": "ActiveCampaign wins for marketing automation first; Zoho CRM wins when you need a broader CRM suite inside the Zoho ecosystem.",
+        "comparisonPoints": [
+            {"feature": "Marketing automation depth", "softwareA": True, "softwareB": False},
+            {"feature": "Full CRM modules (sales-centric)", "softwareA": True, "softwareB": True},
+            {"feature": "Zoho suite integration", "softwareA": False, "softwareB": True},
+            {"feature": "Email journey builders", "softwareA": True, "softwareB": False},
+            {"feature": "Value pricing for CRM seats", "softwareA": True, "softwareB": True},
+            {"feature": "Lead scoring & nurture", "softwareA": True, "softwareB": True},
+        ],
+        "prosA": [
+            "Automation quality marketers expect",
+            "Tighter email + CRM loop for growth teams",
+            "Strong mid-market automation reputation",
+        ],
+        "consA": [
+            "CRM breadth below large suite vendors",
+            "Less native fit if already all-in on Zoho",
+        ],
+        "prosB": [
+            "Affordable CRM with wide module coverage",
+            "Natural fit with Zoho Books, Campaigns, etc.",
+            "Solid for sales ops on a budget",
+        ],
+        "consB": [
+            "Marketing automation usually needs Zoho Campaigns or other tools",
+            "UX polish varies across modules",
+        ],
+    },
+    "hubspot-vs-zoho-crm": {
+        "verdict": "HubSpot",
+        "verdictReason": "HubSpot wins for unified free-to-paid growth stacks; Zoho CRM wins when maximizing CRM features per dollar in the Zoho suite.",
+        "comparisonPoints": [
+            {"feature": "Free CRM + marketing starter tools", "softwareA": True, "softwareB": False},
+            {"feature": "All-in-one marketing hubs", "softwareA": True, "softwareB": False},
+            {"feature": "Aggressive CRM seat pricing", "softwareA": False, "softwareB": True},
+            {"feature": "Zoho ecosystem native apps", "softwareA": False, "softwareB": True},
+            {"feature": "Inbound content & CMS", "softwareA": True, "softwareB": False},
+            {"feature": "Sales CRM customization", "softwareA": True, "softwareB": True},
+        ],
+        "prosA": [
+            "Best-known path from free CRM to full hubs",
+            "Marketing, sales, and service on one record",
+            "Strong education and partner ecosystem",
+        ],
+        "consA": [
+            "Paid hubs become expensive at scale",
+            "Can feel heavy for CRM-only needs",
+        ],
+        "prosB": [
+            "Feature-rich CRM without HubSpot hub pricing",
+            "Excellent if standardized on Zoho",
+            "Broad admin controls for sales processes",
+        ],
+        "consB": [
+            "Marketing automation is not HubSpot-class natively",
+            "Brand and UX consistency lag HubSpot",
+        ],
+    },
+    "klaviyo-vs-brevo": {
+        "verdict": "Klaviyo",
+        "verdictReason": "Klaviyo wins for serious e-commerce personalization; Brevo wins for budget multi-channel email/SMS outside pure DTC complexity.",
+        "comparisonPoints": [
+            {"feature": "E-commerce event intelligence", "softwareA": True, "softwareB": False},
+            {"feature": "Affordable multi-channel SMS/WhatsApp", "softwareA": False, "softwareB": True},
+            {"feature": "Predictive CLV / churn style insights", "softwareA": True, "softwareB": False},
+            {"feature": "Transactional email", "softwareA": True, "softwareB": True},
+            {"feature": "Retail flow templates", "softwareA": True, "softwareB": False},
+            {"feature": "SMB pricing simplicity", "softwareA": False, "softwareB": True},
+        ],
+        "prosA": [
+            "Top-tier for Shopify-class revenue automation",
+            "Deep segments on purchase behavior",
+            "Email + SMS on robust profiles",
+        ],
+        "consA": [
+            "Price scales with contacts and sophistication",
+            "Overbuilt for simple newsletter senders",
+        ],
+        "prosB": [
+            "Strong value for email + SMS + WhatsApp",
+            "Approachable for smaller lists and budgets",
+            "CRM-lite and transactional options included",
+        ],
+        "consB": [
+            "Lacks Klaviyo-depth commerce data modeling",
+            "Fewer advanced predictive retail features",
+        ],
+    },
+    "mailchimp-vs-activecampaign": {
+        "verdict": "ActiveCampaign",
+        "verdictReason": "ActiveCampaign wins when automation and CRM matter; Mailchimp wins for simple campaigns and brand-friendly email basics.",
+        "comparisonPoints": [
+            {"feature": "Advanced automation & scoring", "softwareA": False, "softwareB": True},
+            {"feature": "Easy campaign builder for beginners", "softwareA": True, "softwareB": True},
+            {"feature": "CRM pipeline features", "softwareA": False, "softwareB": True},
+            {"feature": "Templates & creative toolkit", "softwareA": True, "softwareB": True},
+            {"feature": "Lead nurturing complexity", "softwareA": False, "softwareB": True},
+            {"feature": "Low-friction free/entry plans", "softwareA": True, "softwareB": False},
+        ],
+        "prosA": [
+            "Friendly for small teams starting email",
+            "Polished templates and brand tools",
+            "Low barrier to send the first campaign",
+        ],
+        "consA": [
+            "Automation depth plateaus sooner",
+            "CRM/sales alignment is limited",
+        ],
+        "prosB": [
+            "Automation that supports real funnel ops",
+            "CRM features for sales-assisted motion",
+            "Better long-term home for complex nurture",
+        ],
+        "consB": [
+            "Slightly steeper learning curve",
+            "Can be more than pure newsletter needs",
+        ],
+    },
+    "mailchimp-vs-brevo": {
+        "verdict": "Brevo",
+        "verdictReason": "Brevo wins for multi-channel and transactional value; Mailchimp wins for mainstream brand email UX and templates.",
+        "comparisonPoints": [
+            {"feature": "Multi-channel SMS/WhatsApp", "softwareA": False, "softwareB": True},
+            {"feature": "Beginner email UX & templates", "softwareA": True, "softwareB": True},
+            {"feature": "Transactional email", "softwareA": True, "softwareB": True},
+            {"feature": "CRM-lite contacts", "softwareA": True, "softwareB": True},
+            {"feature": "Aggressive entry pricing", "softwareA": False, "softwareB": True},
+            {"feature": "Brand design toolkit", "softwareA": True, "softwareB": False},
+        ],
+        "prosA": [
+            "Well-known, easy campaign experience",
+            "Strong creative and template ecosystem",
+            "Fine for general SMB newsletters",
+        ],
+        "consA": [
+            "Multi-channel and transactional value lag Brevo",
+            "Automation for complex funnels is limited",
+        ],
+        "prosB": [
+            "Email + SMS + WhatsApp without patchwork",
+            "Competitive pricing including transactional",
+            "Landing pages and CRM-lite included",
+        ],
+        "consB": [
+            "Brand polish and mindshare trail Mailchimp",
+            "Less 'default' for pure creative teams",
+        ],
+    },
+    "pipedrive-vs-zoho-crm": {
+        "verdict": "Pipedrive",
+        "verdictReason": "Pipedrive wins for sales teams obsessed with pipeline velocity; Zoho CRM wins for broader CRM modules at suite pricing.",
+        "comparisonPoints": [
+            {"feature": "Pipeline-first sales UX", "softwareA": True, "softwareB": False},
+            {"feature": "Broad CRM module coverage", "softwareA": False, "softwareB": True},
+            {"feature": "Activity-based selling", "softwareA": True, "softwareB": True},
+            {"feature": "Zoho suite connectivity", "softwareA": False, "softwareB": True},
+            {"feature": "Fast rep onboarding", "softwareA": True, "softwareB": False},
+            {"feature": "Admin customization breadth", "softwareA": True, "softwareB": True},
+        ],
+        "prosA": [
+            "Designed so salespeople actually update deals",
+            "Clear focus on closing and activities",
+            "Minimal bloat for pipeline CRM",
+        ],
+        "consA": [
+            "Not an all-suite business platform",
+            "Marketing and service need other products",
+        ],
+        "prosB": [
+            "More CRM surface area per dollar",
+            "Fits multi-app Zoho environments",
+            "Flexible for varied sales processes",
+        ],
+        "consB": [
+            "UX can feel less sales-obsessed than Pipedrive",
+            "Easy to over-configure",
+        ],
+    },
+    "salesforce-vs-activecampaign": {
+        "verdict": "Salesforce",
+        "verdictReason": "Salesforce wins for enterprise CRM platforms; ActiveCampaign wins for mid-market teams that want automation without a multi-cloud project.",
+        "comparisonPoints": [
+            {"feature": "Enterprise CRM platform scale", "softwareA": True, "softwareB": False},
+            {"feature": "Marketing automation out of the box", "softwareA": True, "softwareB": True},
+            {"feature": "AppExchange ecosystem", "softwareA": True, "softwareB": False},
+            {"feature": "Mid-market time-to-value", "softwareA": False, "softwareB": True},
+            {"feature": "Visual nurture automation", "softwareA": True, "softwareB": True},
+            {"feature": "Lower implementation overhead", "softwareA": False, "softwareB": True},
+        ],
+        "prosA": [
+            "The enterprise standard for complex CRM",
+            "Unlimited path to customize and integrate",
+            "Trusted for global sales operations",
+        ],
+        "consA": [
+            "Cost and complexity exclude many mid-market teams",
+            "Marketing clouds add more spend and vendors",
+        ],
+        "prosB": [
+            "Automation + CRM without enterprise SI budgets",
+            "Faster path to live nurture programs",
+            "Right-sized for growth-stage companies",
+        ],
+        "consB": [
+            "Cannot match Salesforce platform ceiling",
+            "Ecosystem and enterprise controls are smaller",
+        ],
+    },
+    "hubspot-vs-mailchimp": {
+        "verdict": "HubSpot",
+        "verdictReason": "HubSpot wins when email must live inside a CRM growth platform; Mailchimp wins for standalone email marketing simplicity.",
+        "comparisonPoints": [
+            {"feature": "CRM-native email & automation", "softwareA": True, "softwareB": False},
+            {"feature": "Standalone email ease of use", "softwareA": True, "softwareB": True},
+            {"feature": "Free CRM + free marketing tools", "softwareA": True, "softwareB": True},
+            {"feature": "Sales pipeline on same contacts", "softwareA": True, "softwareB": False},
+            {"feature": "Creative templates & brand kit", "softwareA": True, "softwareB": True},
+            {"feature": "All-in-one hubs expansion path", "softwareA": True, "softwareB": False},
+        ],
+        "prosA": [
+            "Email tied to deals, tickets, and lifecycle stages",
+            "Clear upgrade path across hubs",
+            "Better for teams aligning marketing and sales",
+        ],
+        "consA": [
+            "Can be more platform than a simple newsletter needs",
+            "Paid features stack as you grow",
+        ],
+        "prosB": [
+            "Straightforward email for campaigns and basics",
+            "Strong brand recognition and templates",
+            "Fine when CRM lives somewhere else",
+        ],
+        "consB": [
+            "Weaker as a system of record for revenue teams",
+            "Automation depth below dedicated MAP/CRM suites",
+        ],
+    },
+    "activecampaign-vs-kit": {
+        "verdict": "ActiveCampaign",
+        "verdictReason": "ActiveCampaign wins for business automation and CRM; Kit wins for creator newsletters and digital-product funnels.",
+        "comparisonPoints": [
+            {"feature": "Creator landing pages & products", "softwareA": False, "softwareB": True},
+            {"feature": "B2B CRM + lead scoring", "softwareA": True, "softwareB": False},
+            {"feature": "Visual automations", "softwareA": True, "softwareB": True},
+            {"feature": "Newsletter-centric creator UX", "softwareA": False, "softwareB": True},
+            {"feature": "Sales pipeline features", "softwareA": True, "softwareB": False},
+            {"feature": "Tag-based creator segments", "softwareA": True, "softwareB": True},
+        ],
+        "prosA": [
+            "Built for companies running funnels into sales",
+            "Automation + CRM in one mid-market package",
+            "Better for agencies and B2B services",
+        ],
+        "consA": [
+            "Not specialized for creator commerce",
+            "Heavier than a pure newsletter tool",
+        ],
+        "prosB": [
+            "Delightful for creators and newsletter businesses",
+            "Landing pages and digital products nearby",
+            "Clean tagging and simple automations",
+        ],
+        "consB": [
+            "Not a sales CRM platform",
+            "Limited for complex B2B pipeline ops",
+        ],
+    },
+    "kit-vs-brevo": {
+        "verdict": "Kit (ConvertKit)",
+        "verdictReason": "Kit wins for creators; Brevo wins for multi-channel SMB email/SMS beyond the creator niche.",
+        "comparisonPoints": [
+            {"feature": "Creator-first workflows", "softwareA": True, "softwareB": False},
+            {"feature": "SMS / WhatsApp multi-channel", "softwareA": False, "softwareB": True},
+            {"feature": "Digital product selling tools", "softwareA": True, "softwareB": False},
+            {"feature": "Transactional email", "softwareA": False, "softwareB": True},
+            {"feature": "Landing pages for audiences", "softwareA": True, "softwareB": True},
+            {"feature": "Broad SMB pricing appeal", "softwareA": True, "softwareB": True},
+        ],
+        "prosA": [
+            "Purpose-built for creators and course sellers",
+            "Audience tagging and creator automations",
+            "Simple path from content to email to product",
+        ],
+        "consA": [
+            "Weak multi-channel SMS/WhatsApp story",
+            "Not aimed at general retail or enterprise",
+        ],
+        "prosB": [
+            "Channels beyond email at accessible prices",
+            "Transactional + marketing in one vendor",
+            "Works for many SMB verticals",
+        ],
+        "consB": [
+            "Less creator-native than Kit",
+            "Community/mindshare in creator space trails Kit",
+        ],
+    },
+    "customer-io-vs-brevo": {
+        "verdict": "Customer.io",
+        "verdictReason": "Customer.io wins for behavioral product messaging; Brevo wins for affordable classic email/SMS marketing for SMBs.",
+        "comparisonPoints": [
+            {"feature": "Event-driven product messaging", "softwareA": True, "softwareB": False},
+            {"feature": "SMB multi-channel affordability", "softwareA": False, "softwareB": True},
+            {"feature": "Developer-friendly data model", "softwareA": True, "softwareB": False},
+            {"feature": "WhatsApp / broad SMS packaging", "softwareA": False, "softwareB": True},
+            {"feature": "Segment + trigger sophistication", "softwareA": True, "softwareB": True},
+            {"feature": "CRM-lite for small teams", "softwareA": False, "softwareB": True},
+        ],
+        "prosA": [
+            "Built for lifecycle messages from product events",
+            "Flexible multi-channel orchestration",
+            "Appeals to technical growth stacks",
+        ],
+        "consA": [
+            "More setup than a simple ESP",
+            "Overkill for basic newsletter sending",
+        ],
+        "prosB": [
+            "Easy multi-channel for non-technical SMBs",
+            "Strong price entry for email + SMS",
+            "Landing pages and CRM-lite included",
+        ],
+        "consB": [
+            "Shallower event/product messaging model",
+            "Less ideal as a product-led messaging brain",
         ],
     },
 }
