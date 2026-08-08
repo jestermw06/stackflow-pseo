@@ -27,4 +27,7 @@ export interface Comparison {
   consA: string[];
   prosB: string[];
   consB: string[];
+  /** flagship = hand-authored; curated = template; generated = LLM script */
+  quality?: 'flagship' | 'curated' | 'generated';
+  intentFamily?: string;
 }

@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "rebuild-data": "python3 scripts/rebuild_production.py",
+    "generate": "node scripts/generate_comparison.mjs"
   },
   "dependencies": {
     "next": "^14.2.0",

@@ -1,4 +1,5 @@
 import React from 'react';
+import { getOutboundUrl, isAffiliateLink } from '../lib/affiliates';
 import type { ComparisonPoint, Software } from '../lib/types';
 
 interface ComparisonProps {
@@ -26,6 +27,10 @@ const ComparisonTemplate: React.FC<ComparisonProps> = ({
 }) => {
   const nameA = softwareA?.name ?? 'Software A';
   const nameB = softwareB?.name ?? 'Software B';
+  const urlA = getOutboundUrl(softwareA?.id, softwareA?.official_url);
+  const urlB = getOutboundUrl(softwareB?.id, softwareB?.official_url);
+  const sponsoredA = isAffiliateLink(softwareA?.id);
+  const sponsoredB = isAffiliateLink(softwareB?.id);
 
   return (
     <div className="max-w-5xl mx-auto px-4 py-12 font-sans text-gray-100">
@@ -95,42 +100,48 @@ const ComparisonTemplate: React.FC<ComparisonProps> = ({
       )}
 
       <section className="grid md:grid-cols-2 gap-8 mb-20">
-        <ProsConsCard
-          title={nameA}
-          pros={prosA}
-          cons={consA}
-        />
-        <ProsConsCard
-          title={nameB}
-          pros={prosB}
-          cons={consB}
-        />
+        <ProsConsCard title={nameA} pros={prosA} cons={consA} />
+        <ProsConsCard title={nameB} pros={prosB} cons={consB} />
       </section>
 
       <footer className="mt-24 pt-12 border-t border-white/10 text-center">
         <p className="text-gray-500 mb-6">Ready to automate your workflow?</p>
         <div className="flex flex-wrap justify-center gap-4">
-          {softwareA?.official_url && (
+          {urlA && urlA !== '#' && (
             <a
-              href={softwareA.official_url}
+              href={urlA}
               target="_blank"
-              rel="noopener noreferrer"
+              rel={
+                sponsoredA
+                  ? 'sponsored noopener noreferrer'
+                  : 'noopener noreferrer'
+              }
               className="px-8 py-3 bg-white text-black rounded-lg font-bold hover:bg-gray-200 transition-all"
             >
               Try {nameA}
             </a>
           )}
-          {softwareB?.official_url && (
+          {urlB && urlB !== '#' && (
             <a
-              href={softwareB.official_url}
+              href={urlB}
               target="_blank"
-              rel="noopener noreferrer"
+              rel={
+                sponsoredB
+                  ? 'sponsored noopener noreferrer'
+                  : 'noopener noreferrer'
+              }
               className="px-8 py-3 bg-[#ff6600] text-white rounded-lg font-bold hover:bg-[#e65c00] transition-all shadow-lg"
             >
               Try {nameB}
             </a>
           )}
         </div>
+        {(sponsoredA || sponsoredB) && (
+          <p className="mt-4 text-xs text-gray-600">
+            Some outbound links may be affiliate links. We may earn a commission
+            at no extra cost to you.
+          </p>
+        )}
       </footer>
     </div>
   );
