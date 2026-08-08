@@ -258,5 +258,57 @@
             "Dashboards"
         ],
         "official_url": "https://www.monday.com"
+    },
+    {
+        "id": "asana",
+        "name": "Asana",
+        "category": "Project Management/Ops",
+        "description": "Work management platform for teams to organize tasks, projects, and goals.",
+        "key_features": [
+            "Task & Project Tracking",
+            "Timeline / Gantt",
+            "Workload Management",
+            "Goals & Portfolios"
+        ],
+        "official_url": "https://asana.com"
+    },
+    {
+        "id": "intercom",
+        "name": "Intercom",
+        "category": "Customer Support/Messaging",
+        "description": "Customer messaging platform for support, engagement, and marketing chat.",
+        "key_features": [
+            "Live Chat & Inbox",
+            "Help Center",
+            "Product Tours",
+            "Outbound Messaging"
+        ],
+        "official_url": "https://www.intercom.com"
+    },
+    {
+        "id": "kit",
+        "name": "Kit (ConvertKit)",
+        "category": "Email Marketing",
+        "description": "Creator-focused email marketing and automation for newsletters and digital products.",
+        "key_features": [
+            "Creator Landing Pages",
+            "Visual Automations",
+            "Tag-based Segmentation",
+            "Commerce / Digital Products"
+        ],
+        "official_url": "https://kit.com"
+    },
+    {
+        "id": "customer_io",
+        "name": "Customer.io",
+        "category": "Marketing Automation",
+        "description": "Behavioral messaging platform for automated email, push, SMS, and in-app campaigns.",
+        "key_features": [
+            "Behavioral Triggers",
+            "Multi-channel Messaging",
+            "Segment Builder",
+            "Developer-friendly APIs"
+        ],
+        "official_url": "https://customer.io"
     }
 ]

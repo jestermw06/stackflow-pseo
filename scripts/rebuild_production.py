@@ -24,11 +24,14 @@ FAMILIES: dict[str, list[str]] = {
         "omnisend",
         "brevo",
         "activecampaign",
+        "kit",
+        "customer_io",
     ],
     "automation": ["zapier", "make"],
     "forms": ["typeform", "jotform"],
     "ecommerce": ["shopify", "woocommerce"],
-    "support_crm": ["hubspot", "zendesk"],  # service hub overlap
+    "support": ["hubspot", "zendesk", "intercom"],
+    "project_mgmt": ["monday_com", "asana"],
 }
 
 # Ordered high-intent pairs (id_a, id_b). First is softwareA.
@@ -38,25 +41,38 @@ CURATED_PAIRS: list[tuple[str, str]] = [
     ("hubspot", "pipedrive"),
     ("hubspot", "zoho_crm"),
     ("salesforce", "pipedrive"),
+    ("salesforce", "zoho_crm"),
     ("pipedrive", "zoho_crm"),
     ("hubspot", "activecampaign"),
     ("activecampaign", "pipedrive"),
+    ("activecampaign", "zoho_crm"),
+    ("salesforce", "activecampaign"),
     # Email / marketing automation
     ("mailchimp", "klaviyo"),
     ("klaviyo", "omnisend"),
+    ("mailchimp", "omnisend"),
     ("mailchimp", "brevo"),
     ("klaviyo", "brevo"),
     ("omnisend", "brevo"),
     ("mailchimp", "activecampaign"),
     ("activecampaign", "klaviyo"),
+    ("activecampaign", "brevo"),
+    ("activecampaign", "omnisend"),
+    ("mailchimp", "kit"),
+    ("klaviyo", "customer_io"),
+    ("activecampaign", "customer_io"),
     # Automation
     ("make", "zapier"),
     # Forms
     ("typeform", "jotform"),
     # Commerce platforms
     ("shopify", "woocommerce"),
-    # Adjacent but real buyer questions
+    # Support / messaging
     ("hubspot", "zendesk"),
+    ("zendesk", "intercom"),
+    ("hubspot", "intercom"),
+    # Project management
+    ("monday_com", "asana"),
 ]
 
 # Flagship hand-authored content keyed by "id_a-vs-id_b" (slug may differ)
@@ -303,6 +319,307 @@ FLAGSHIPS: dict[str, dict] = {
         "consB": [
             "Not a marketing automation platform",
             "CRM story is support-centric, not growth-centric",
+        ],
+    },
+    "salesforce-vs-zoho-crm": {
+        "verdict": "Salesforce",
+        "verdictReason": "Salesforce wins for enterprise scale and ecosystem; Zoho CRM wins when budget and all-in-one Zoho suite matter more.",
+        "comparisonPoints": [
+            {"feature": "Enterprise customization depth", "softwareA": True, "softwareB": False},
+            {"feature": "Aggressive value pricing", "softwareA": False, "softwareB": True},
+            {"feature": "AppExchange-scale ecosystem", "softwareA": True, "softwareB": False},
+            {"feature": "Native Zoho suite integration", "softwareA": False, "softwareB": True},
+            {"feature": "Advanced analytics & AI layers", "softwareA": True, "softwareB": True},
+            {"feature": "Lower total cost for SMBs", "softwareA": False, "softwareB": True},
+            {"feature": "Global partner / SI network", "softwareA": True, "softwareB": False},
+        ],
+        "prosA": [
+            "Industry default for complex enterprise CRM",
+            "Unmatched partner and integration ecosystem",
+            "Deep multi-cloud sales, service, and marketing options",
+        ],
+        "consA": [
+            "Expensive and implementation-heavy",
+            "Overkill for simple sales pipelines",
+        ],
+        "prosB": [
+            "Strong feature set at mid-market prices",
+            "Fits naturally if you already use Zoho apps",
+            "Faster to stand up than full Salesforce",
+        ],
+        "consB": [
+            "Smaller ecosystem and enterprise pedigree",
+            "Customization ceiling below Salesforce for huge orgs",
+        ],
+    },
+    "mailchimp-vs-omnisend": {
+        "verdict": "Omnisend",
+        "verdictReason": "Omnisend wins for online stores that need email + SMS + push; Mailchimp wins for general brands and simple newsletters.",
+        "comparisonPoints": [
+            {"feature": "E-commerce automation focus", "softwareA": False, "softwareB": True},
+            {"feature": "Beginner email campaigns", "softwareA": True, "softwareB": True},
+            {"feature": "SMS + push with email", "softwareA": False, "softwareB": True},
+            {"feature": "Broad non-retail use cases", "softwareA": True, "softwareB": False},
+            {"feature": "Product recommendations", "softwareA": False, "softwareB": True},
+            {"feature": "Brand toolkit & templates", "softwareA": True, "softwareB": True},
+        ],
+        "prosA": [
+            "Familiar UI for small teams and creators",
+            "Solid all-purpose email and basic automations",
+            "Helpful free/entry tiers for tiny lists",
+        ],
+        "consA": [
+            "Weaker shopper-event depth than commerce ESPs",
+            "Multi-channel retail tooling lags specialists",
+        ],
+        "prosB": [
+            "Purpose-built for Shopify/Woo-style stores",
+            "Email, SMS, and push in one commerce stack",
+            "Strong product and cart-driven journeys",
+        ],
+        "consB": [
+            "Less ideal outside e-commerce",
+            "Pricing and channels should match store volume",
+        ],
+    },
+    "hubspot-vs-activecampaign": {
+        "verdict": "HubSpot",
+        "verdictReason": "HubSpot wins as an all-in-one CRM + marketing platform; ActiveCampaign wins for automation-heavy email at a sharper mid-market price.",
+        "comparisonPoints": [
+            {"feature": "Full CRM free tier", "softwareA": True, "softwareB": False},
+            {"feature": "Visual marketing automation depth", "softwareA": True, "softwareB": True},
+            {"feature": "CMS / content hub", "softwareA": True, "softwareB": False},
+            {"feature": "Aggressive automation pricing", "softwareA": False, "softwareB": True},
+            {"feature": "Sales + service hubs", "softwareA": True, "softwareB": False},
+            {"feature": "Lead scoring & CRM lite", "softwareA": True, "softwareB": True},
+        ],
+        "prosA": [
+            "One database across marketing, sales, and service",
+            "Strong free tools and inbound ecosystem",
+            "Reporting and CRM depth for growing teams",
+        ],
+        "consA": [
+            "Paid hubs get expensive as you scale seats",
+            "Can feel large if you only need email automation",
+        ],
+        "prosB": [
+            "Excellent automation builder for nurture sequences",
+            "Often better price-to-automation ratio mid-market",
+            "CRM features solid for sales-assisted marketing",
+        ],
+        "consB": [
+            "Not a full multi-hub customer platform like HubSpot",
+            "Content/CMS story is thinner",
+        ],
+    },
+    "klaviyo-vs-omnisend": {
+        "verdict": "Klaviyo",
+        "verdictReason": "Klaviyo wins for data-rich DTC brands; Omnisend wins when multi-channel push/SMS simplicity and price matter more.",
+        "comparisonPoints": [
+            {"feature": "Deep e-commerce event data model", "softwareA": True, "softwareB": True},
+            {"feature": "Predictive analytics (CLV, churn)", "softwareA": True, "softwareB": False},
+            {"feature": "Push notifications", "softwareA": False, "softwareB": True},
+            {"feature": "SMS + email unified profiles", "softwareA": True, "softwareB": True},
+            {"feature": "Enterprise-grade segmentation", "softwareA": True, "softwareB": False},
+            {"feature": "Faster mid-market multi-channel setup", "softwareA": False, "softwareB": True},
+        ],
+        "prosA": [
+            "Best-in-class profiles and flows for serious DTC",
+            "Powerful segmentation and predictive insights",
+            "Strong SMS alongside email on the same identity",
+        ],
+        "consA": [
+            "Cost climbs with contacts and channels",
+            "Can be more than small catalogs need",
+        ],
+        "prosB": [
+            "Email + SMS + push without stitching tools",
+            "Approachable for growing Shopify stores",
+            "Commerce templates that ship quickly",
+        ],
+        "consB": [
+            "Analytics depth trails Klaviyo at the high end",
+            "Less of an enterprise data platform feel",
+        ],
+    },
+    "zendesk-vs-intercom": {
+        "verdict": "Zendesk",
+        "verdictReason": "Zendesk wins for classic high-volume ticketing and ops; Intercom wins for product-led messaging and modern chat-first support.",
+        "comparisonPoints": [
+            {"feature": "Enterprise ticketing & SLAs", "softwareA": True, "softwareB": True},
+            {"feature": "In-product chat & messenger", "softwareA": True, "softwareB": True},
+            {"feature": "Product tours & outbound engagement", "softwareA": False, "softwareB": True},
+            {"feature": "Workforce / agent productivity suite", "softwareA": True, "softwareB": False},
+            {"feature": "Help center / knowledge base", "softwareA": True, "softwareB": True},
+            {"feature": "Product-led growth messaging", "softwareA": False, "softwareB": True},
+        ],
+        "prosA": [
+            "Battle-tested ticketing for large support orgs",
+            "Mature omnichannel and reporting",
+            "Huge app marketplace for support stacks",
+        ],
+        "consA": [
+            "Less modern for product-led engagement",
+            "Can feel heavy for chat-first startups",
+        ],
+        "prosB": [
+            "Excellent messenger for SaaS product UX",
+            "Outbound and onboarding in the same suite",
+            "Strong fit for PLG companies",
+        ],
+        "consB": [
+            "Pricing can surprise as seats and products stack",
+            "Deep ticket ops still often favor Zendesk",
+        ],
+    },
+    "monday-com-vs-asana": {
+        "verdict": "Asana",
+        "verdictReason": "Asana wins for clear work management and goals; Monday.com wins when highly customizable Work OS boards are the priority.",
+        "comparisonPoints": [
+            {"feature": "Flexible Work OS boards", "softwareA": True, "softwareB": False},
+            {"feature": "Task & project hierarchy clarity", "softwareA": True, "softwareB": True},
+            {"feature": "Timeline / Gantt views", "softwareA": True, "softwareB": True},
+            {"feature": "Goals & portfolio management", "softwareA": False, "softwareB": True},
+            {"feature": "No/low-code board customization", "softwareA": True, "softwareB": False},
+            {"feature": "Workload views", "softwareA": True, "softwareB": True},
+        ],
+        "prosA": [
+            "Extremely customizable boards and automations",
+            "Visual dashboards teams can shape quickly",
+            "Broad use cases beyond pure task lists",
+        ],
+        "consA": [
+            "Can become messy without governance",
+            "Pricing tiers add up with seats and features",
+        ],
+        "prosB": [
+            "Clear structure for tasks, projects, and goals",
+            "Strong planning views for cross-functional work",
+            "Mature product for PM-led organizations",
+        ],
+        "consB": [
+            "Less of a free-form Work OS canvas than Monday",
+            "Power features concentrate on higher plans",
+        ],
+    },
+    "mailchimp-vs-kit": {
+        "verdict": "Kit (ConvertKit)",
+        "verdictReason": "Kit wins for creators and digital-product businesses; Mailchimp wins for general SMBs and broader brand email.",
+        "comparisonPoints": [
+            {"feature": "Creator-first landing pages & forms", "softwareA": False, "softwareB": True},
+            {"feature": "General SMB email marketing", "softwareA": True, "softwareB": False},
+            {"feature": "Tag-based creator automations", "softwareA": True, "softwareB": True},
+            {"feature": "Digital product / commerce tools", "softwareA": False, "softwareB": True},
+            {"feature": "Templates & brand kit for any industry", "softwareA": True, "softwareB": False},
+            {"feature": "Newsletter-centric workflows", "softwareA": True, "softwareB": True},
+        ],
+        "prosA": [
+            "Versatile for many industries and list types",
+            "Familiar feature set and free-entry options",
+            "Solid templates and creative tools",
+        ],
+        "consA": [
+            "Not specialized for creator monetization",
+            "Commerce/creator tooling is secondary",
+        ],
+        "prosB": [
+            "Built around creators, newsletters, and courses",
+            "Clean visual automations and tagging",
+            "Landing pages and products in one flow",
+        ],
+        "consB": [
+            "Less ideal as a generic enterprise ESP",
+            "E-commerce retail depth trails Klaviyo-class tools",
+        ],
+    },
+    "hubspot-vs-intercom": {
+        "verdict": "HubSpot",
+        "verdictReason": "HubSpot wins when CRM + marketing + service must share one system; Intercom wins for in-product messaging and PLG support.",
+        "comparisonPoints": [
+            {"feature": "Full CRM & marketing hubs", "softwareA": True, "softwareB": False},
+            {"feature": "In-product messenger", "softwareA": True, "softwareB": True},
+            {"feature": "Product tours & outbound series", "softwareA": False, "softwareB": True},
+            {"feature": "Inbound content & SEO tools", "softwareA": True, "softwareB": False},
+            {"feature": "Ticketing / service desk", "softwareA": True, "softwareB": True},
+            {"feature": "PLG engagement focus", "softwareA": False, "softwareB": True},
+        ],
+        "prosA": [
+            "Complete growth stack on one contact graph",
+            "Strong free CRM entry and hub expansion path",
+            "Marketing automation beyond chat alone",
+        ],
+        "consA": [
+            "Messenger experience is good, not Intercom-native",
+            "Cost rises with multiple hubs",
+        ],
+        "prosB": [
+            "Best-in-class product messaging for SaaS",
+            "Onboarding and support in the product UI",
+            "Outbound and help content for modern support",
+        ],
+        "consB": [
+            "Not a substitute for full CRM/marketing suite",
+            "Seat and add-on pricing needs careful planning",
+        ],
+    },
+    "salesforce-vs-pipedrive": {
+        "verdict": "Pipedrive",
+        "verdictReason": "Pipedrive wins for sales teams that want pipeline speed without admin overhead; Salesforce wins when enterprise process complexity demands it.",
+        "comparisonPoints": [
+            {"feature": "Visual pipeline simplicity", "softwareA": False, "softwareB": True},
+            {"feature": "Enterprise process customization", "softwareA": True, "softwareB": False},
+            {"feature": "Activity-based selling UX", "softwareA": True, "softwareB": True},
+            {"feature": "AppExchange ecosystem", "softwareA": True, "softwareB": False},
+            {"feature": "Fast onboarding for sales reps", "softwareA": False, "softwareB": True},
+            {"feature": "Complex multi-cloud architecture", "softwareA": True, "softwareB": False},
+        ],
+        "prosA": [
+            "Handles complex enterprise sales motions",
+            "Deep reporting and platform extensibility",
+            "Trusted by large global sales orgs",
+        ],
+        "consA": [
+            "Slow and costly to implement well",
+            "Reps often need training and admin support",
+        ],
+        "prosB": [
+            "Pipeline-first design salespeople actually use",
+            "Quick time-to-value for SMB and mid-market",
+            "Clean activity and deal hygiene workflows",
+        ],
+        "consB": [
+            "Not built for extreme enterprise customization",
+            "Marketing automation needs other tools",
+        ],
+    },
+    "klaviyo-vs-customer-io": {
+        "verdict": "Klaviyo",
+        "verdictReason": "Klaviyo wins for e-commerce marketers; Customer.io wins for product/engineering-led behavioral messaging across channels.",
+        "comparisonPoints": [
+            {"feature": "E-commerce marketer UX", "softwareA": True, "softwareB": False},
+            {"feature": "Developer-friendly event APIs", "softwareA": True, "softwareB": True},
+            {"feature": "Shopify-native data model", "softwareA": True, "softwareB": False},
+            {"feature": "Multi-channel behavioral campaigns", "softwareA": True, "softwareB": True},
+            {"feature": "Segment builder flexibility", "softwareA": True, "softwareB": True},
+            {"feature": "Product-led / app messaging focus", "softwareA": False, "softwareB": True},
+        ],
+        "prosA": [
+            "Default choice for serious online retail email/SMS",
+            "Marketer-friendly flows and analytics",
+            "Rich store and catalog integrations",
+        ],
+        "consA": [
+            "Less ideal as a pure product messaging brain",
+            "Pricing is contact- and usage-sensitive",
+        ],
+        "prosB": [
+            "Excellent for event-driven product messaging",
+            "Flexible for app, email, push, and SMS logic",
+            "Appeals to technical growth teams",
+        ],
+        "consB": [
+            "Steeper for pure retail marketers",
+            "Less out-of-box Shopify polish than Klaviyo",
         ],
     },
 }
