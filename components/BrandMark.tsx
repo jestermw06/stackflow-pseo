@@ -1,4 +1,6 @@
 /** StackClash mark — two clashing wedges in a rounded tile. */
+let markSeq = 0;
+
 export default function BrandMark({
   className = 'h-8 w-8',
   title = 'StackClash',
@@ -6,6 +8,8 @@ export default function BrandMark({
   className?: string;
   title?: string;
 }) {
+  markSeq += 1;
+  const uid = `sc${markSeq}`;
   return (
     <svg
       className={className}
@@ -16,17 +20,17 @@ export default function BrandMark({
       aria-label={title}
     >
       <defs>
-        <linearGradient id="sc-bg" x1="8" y1="4" x2="56" y2="60" gradientUnits="userSpaceOnUse">
+        <linearGradient id={`${uid}-bg`} x1="8" y1="4" x2="56" y2="60" gradientUnits="userSpaceOnUse">
           <stop stopColor="#FB923C" />
           <stop offset="1" stopColor="#EA580C" />
         </linearGradient>
-        <linearGradient id="sc-shine" x1="20" y1="10" x2="44" y2="54" gradientUnits="userSpaceOnUse">
+        <linearGradient id={`${uid}-shine`} x1="20" y1="10" x2="44" y2="54" gradientUnits="userSpaceOnUse">
           <stop stopColor="#FFFFFF" stopOpacity="0.35" />
           <stop offset="1" stopColor="#FFFFFF" stopOpacity="0" />
         </linearGradient>
       </defs>
-      <rect width="64" height="64" rx="16" fill="url(#sc-bg)" />
-      <rect width="64" height="64" rx="16" fill="url(#sc-shine)" />
+      <rect width="64" height="64" rx="16" fill={`url(#${uid}-bg)`} />
+      <rect width="64" height="64" rx="16" fill={`url(#${uid}-shine)`} />
       {/* Left wedge */}
       <path
         d="M14 40 L30 18 L30 28 L18 44 Z"
