@@ -1,6 +1,7 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { Inter, Space_Grotesk } from 'next/font/google';
+import GoogleAnalytics from '../components/GoogleAnalytics';
 import SiteFooter from '../components/SiteFooter';
 import SiteHeader from '../components/SiteHeader';
 import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from '../lib/site';
@@ -55,6 +56,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${sans.variable} ${display.variable}`}>
       <body className="flex min-h-screen flex-col font-sans">
+        <GoogleAnalytics />
         <SiteHeader />
         <div className="flex-1">{children}</div>
         <SiteFooter />
