@@ -12,7 +12,10 @@ export default function SiteFooter() {
         </div>
         <div className="flex flex-wrap justify-center gap-6 text-sm text-zinc-500">
           <Link href="/comparisons" className="hover:text-brand-400 transition">
-            All comparisons
+            Comparisons
+          </Link>
+          <Link href="/tools" className="hover:text-brand-400 transition">
+            Guides
           </Link>
           <Link href="/sitemap.xml" className="hover:text-brand-400 transition">
             Sitemap

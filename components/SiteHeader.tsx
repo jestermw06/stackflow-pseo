@@ -19,6 +19,12 @@ export default function SiteHeader() {
           >
             Comparisons
           </Link>
+          <Link
+            href="/tools"
+            className="rounded-lg px-3 py-2 text-sm font-medium text-zinc-400 transition hover:bg-white/5 hover:text-white"
+          >
+            Guides
+          </Link>
           <Link href="/#featured" className="btn-primary !px-4 !py-2 text-xs sm:text-sm">
             Browse
           </Link>

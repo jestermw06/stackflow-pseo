@@ -6,6 +6,7 @@ import JsonLd from '../../components/JsonLd';
 import comparisonData from '../../data/production_comparisons.json';
 import { comparisonJsonLd } from '../../lib/jsonld';
 import { SITE_NAME, SITE_URL } from '../../lib/site';
+import { hasToolPage } from '../../lib/tools';
 import type { Comparison } from '../../lib/types';
 
 const comparisons = comparisonData as Comparison[];
@@ -125,6 +126,30 @@ export default function ComparisonPage({
         consB={consB}
         comparisonPoints={comparisonPoints}
       />
+
+      {(hasToolPage(comparison.softwareA?.id) ||
+        hasToolPage(comparison.softwareB?.id)) && (
+        <section className="site-container pb-8">
+          <div className="flex flex-wrap gap-3 text-sm">
+            {hasToolPage(comparison.softwareA?.id) && (
+              <Link
+                href={`/tools/${comparison.softwareA.id}`}
+                className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-zinc-300 transition hover:border-brand-500/40 hover:text-brand-300"
+              >
+                {comparison.softwareA.name} guide →
+              </Link>
+            )}
+            {hasToolPage(comparison.softwareB?.id) && (
+              <Link
+                href={`/tools/${comparison.softwareB.id}`}
+                className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-zinc-300 transition hover:border-brand-500/40 hover:text-brand-300"
+              >
+                {comparison.softwareB.name} guide →
+              </Link>
+            )}
+          </div>
+        </section>
+      )}
 
       {related.length > 0 && (
         <section className="site-container pb-20">
