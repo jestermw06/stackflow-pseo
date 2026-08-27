@@ -4,7 +4,12 @@ import type { Metadata } from 'next';
 import ComparisonTemplate from '../../components/ComparisonTemplate';
 import JsonLd from '../../components/JsonLd';
 import comparisonData from '../../data/production_comparisons.json';
-import { comparisonJsonLd } from '../../lib/jsonld';
+import {
+  articleJsonLd,
+  comparisonJsonLd,
+  faqJsonLd,
+} from '../../lib/jsonld';
+import { getLongform } from '../../lib/longform';
 import { SITE_NAME, SITE_URL } from '../../lib/site';
 import { hasToolPage } from '../../lib/tools';
 import type { Comparison } from '../../lib/types';
@@ -30,7 +35,9 @@ export async function generateMetadata({
   const title =
     comparison.title ||
     `${comparison.softwareA?.name} vs ${comparison.softwareB?.name}`;
+  const article = getLongform(comparison.slug);
   const description =
+    article?.dek ||
     comparison.verdictReason ||
     `Compare ${comparison.softwareA?.name} vs ${comparison.softwareB?.name} — features, pros, cons, and a clear verdict.`;
   const url = `${SITE_URL}/${comparison.slug}`;
@@ -94,10 +101,16 @@ export default function ComparisonPage({
     : [];
 
   const related = relatedComparisons(comparison);
+  const article = getLongform(comparison.slug);
+  const jsonLd: object[] = [comparisonJsonLd(comparison)];
+  if (article) {
+    jsonLd.push(articleJsonLd(comparison, '2026-08-27'));
+    if (article.faqs.length) jsonLd.push(faqJsonLd(article.faqs));
+  }
 
   return (
     <main>
-      <JsonLd data={comparisonJsonLd(comparison)} />
+      <JsonLd data={jsonLd} />
 
       <div className="border-b border-white/5 bg-surface-900/40">
         <div className="site-container flex flex-wrap items-center gap-2 py-3 text-sm text-zinc-500">
@@ -125,6 +138,7 @@ export default function ComparisonPage({
         prosB={prosB}
         consB={consB}
         comparisonPoints={comparisonPoints}
+        article={article}
       />
 
       {(hasToolPage(comparison.softwareA?.id) ||

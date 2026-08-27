@@ -4,7 +4,7 @@ import { Inter, Space_Grotesk } from 'next/font/google';
 import GoogleAnalytics from '../components/GoogleAnalytics';
 import SiteFooter from '../components/SiteFooter';
 import SiteHeader from '../components/SiteHeader';
-import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from '../lib/site';
+import { SITE_DESCRIPTION, SITE_NAME, SITE_TITLE, SITE_URL } from '../lib/site';
 
 const sans = Inter({
   subsets: ['latin'],
@@ -21,7 +21,7 @@ const display = Space_Grotesk({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: `${SITE_NAME} | Marketing Automation Comparisons`,
+    default: SITE_TITLE,
     template: `%s | ${SITE_NAME}`,
   },
   description: SITE_DESCRIPTION,
@@ -31,12 +31,12 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: SITE_URL,
     siteName: SITE_NAME,
-    title: `${SITE_NAME} | Marketing Automation Comparisons`,
+    title: SITE_TITLE,
     description: SITE_DESCRIPTION,
   },
   twitter: {
     card: 'summary_large_image',
-    title: `${SITE_NAME} | Marketing Automation Comparisons`,
+    title: SITE_TITLE,
     description: SITE_DESCRIPTION,
   },
   robots: {

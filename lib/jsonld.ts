@@ -1,5 +1,6 @@
-import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from './site';
-import type { Comparison } from './types';
+import type { FaqItem } from './longform/types';
+import { SITE_DESCRIPTION, SITE_DISAMBIGUATION, SITE_NAME, SITE_URL } from './site';
+import type { Comparison, Software } from './types';
 
 export function websiteJsonLd() {
   return {
@@ -16,8 +17,73 @@ export function organizationJsonLd() {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: SITE_NAME,
+    alternateName: ['StackClash.io', 'Stack Clash MarTech'],
     url: SITE_URL,
-    description: SITE_DESCRIPTION,
+    description: `${SITE_DESCRIPTION} ${SITE_DISAMBIGUATION}`,
+    knowsAbout: [
+      'marketing automation',
+      'CRM software',
+      'email marketing',
+      'ecommerce platforms',
+    ],
+    disambiguatingDescription: SITE_DISAMBIGUATION,
+  };
+}
+
+export function faqJsonLd(faqs: FaqItem[]) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.a,
+      },
+    })),
+  };
+}
+
+export function articleJsonLd(comparison: Comparison, reviewed: string) {
+  const title =
+    comparison.title ||
+    `${comparison.softwareA?.name} vs ${comparison.softwareB?.name}`;
+  const url = `${SITE_URL}/${comparison.slug}`;
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: title,
+    description: comparison.verdictReason,
+    dateModified: reviewed,
+    author: {
+      '@type': 'Organization',
+      name: SITE_NAME,
+      url: SITE_URL,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: SITE_NAME,
+      url: SITE_URL,
+    },
+    mainEntityOfPage: url,
+    about: [
+      comparison.softwareA?.name,
+      comparison.softwareB?.name,
+      'software comparison',
+    ].filter(Boolean),
+  };
+}
+
+export function softwareGuideJsonLd(software: Software, description: string) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: software.name,
+    applicationCategory: software.category,
+    url: software.official_url,
+    description,
+    sameAs: software.official_url,
   };
 }
 

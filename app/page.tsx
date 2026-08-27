@@ -2,22 +2,29 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import JsonLd from '../components/JsonLd';
 import comparisonData from '../data/production_comparisons.json';
+import { getLongform } from '../lib/longform';
 import {
   homeItemListJsonLd,
   organizationJsonLd,
   websiteJsonLd,
 } from '../lib/jsonld';
-import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from '../lib/site';
+import {
+  SITE_DESCRIPTION,
+  SITE_DISAMBIGUATION,
+  SITE_NAME,
+  SITE_TITLE,
+  SITE_URL,
+} from '../lib/site';
 import type { Comparison } from '../lib/types';
 
 export const metadata: Metadata = {
-  title: { absolute: `${SITE_NAME} | Marketing Automation Comparisons` },
+  title: { absolute: SITE_TITLE },
   description: SITE_DESCRIPTION,
   alternates: {
     canonical: SITE_URL,
   },
   openGraph: {
-    title: `${SITE_NAME} | Marketing Automation Comparisons`,
+    title: SITE_TITLE,
     description: SITE_DESCRIPTION,
     url: SITE_URL,
   },
@@ -61,7 +68,7 @@ export default function HomePage() {
           }}
         />
         <div className="site-container relative text-center">
-          <p className="eyebrow mb-5">Software matchups that actually help</p>
+          <p className="eyebrow mb-5">CRM &amp; email marketing comparisons</p>
           <h1 className="font-display mx-auto max-w-4xl text-4xl font-bold tracking-tight text-white sm:text-6xl lg:text-7xl">
             Pick your stack.{' '}
             <span className="bg-gradient-to-r from-brand-300 via-brand-400 to-orange-200 bg-clip-text text-transparent">
@@ -71,6 +78,9 @@ export default function HomePage() {
           <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-zinc-400 sm:text-lg">
             Clear verdicts on CRM, email, automation, and e-commerce tools —
             built for teams choosing software, not reading fluff.
+          </p>
+          <p className="mx-auto mt-4 max-w-xl text-xs leading-relaxed text-zinc-600">
+            {SITE_DISAMBIGUATION}
           </p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
             <a href="#featured" className="btn-primary px-8 py-3.5 text-base">
@@ -138,7 +148,11 @@ export default function HomePage() {
                         : 'bg-white/5 text-zinc-400 ring-1 ring-white/10'
                     }`}
                   >
-                    {comp.quality === 'flagship' ? 'Flagship' : 'Comparison'}
+                    {getLongform(comp.slug)
+                      ? 'Deep review'
+                      : comp.quality === 'flagship'
+                        ? 'Flagship'
+                        : 'Comparison'}
                   </span>
                   {comp.intentFamily && (
                     <span className="truncate text-[10px] uppercase tracking-wider text-zinc-600">

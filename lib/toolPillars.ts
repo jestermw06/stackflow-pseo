@@ -32,7 +32,7 @@ export const TOOL_PILLARS: Record<string, ToolPillarCopy> = {
       'Creators who only need a simple newsletter stack (consider Kit)',
     ],
     pricingNote:
-      'Plans scale with contacts and features. Expect to pay more as automation and CRM seats grow—compare total cost against HubSpot hubs and lighter ESPs.',
+      'Contact-banded. Starter is commonly ~$15/mo at 1,000 contacts but caps automations at 5 actions — budget Plus (~$49/mo at 1k) as the real product. Pro ~$79/mo and Enterprise ~$145/mo at 1k contacts (2026 list, annual). SMS, WhatsApp, and enhanced CRM are add-ons. Confirm on activecampaign.com/pricing.',
     verdict:
       'Strong default for growth teams that want serious automation without enterprise CRM complexity. Validate fit against HubSpot (all-in-one) and Klaviyo (e-commerce) using our head-to-heads below.',
   },
@@ -53,7 +53,7 @@ export const TOOL_PILLARS: Record<string, ToolPillarCopy> = {
       'Pure e-commerce email teams better served by Klaviyo-class tools',
     ],
     pricingNote:
-      'Hub costs stack by seat and hub. Model multi-hub pricing carefully against “good enough” automation CRMs.',
+      'Free CRM, then Marketing Starter ~$15–20/seat/mo. Marketing Hub Professional is ~$890/mo annual (3 seats, 2,000 marketing contacts) plus a mandatory ~$3,000 onboarding fee. Enterprise ~$3,600/mo + ~$7,000 onboarding. Extra hubs and contact tiers stack. Confirm on hubspot.com/pricing.',
     verdict:
       'Best when you want one system of record for growth. If you only need email automation or a pure pipeline, lighter tools often win—see comparisons below.',
   },
@@ -74,7 +74,7 @@ export const TOOL_PILLARS: Record<string, ToolPillarCopy> = {
       'Budgets that cannot absorb contact-based pricing at scale',
     ],
     pricingNote:
-      'Pricing grows with active profiles and channels. High-volume stores should model SMS + email together.',
+      'Active profiles, not just last month’s recipients. Free: 250 profiles / 500 emails. Email plan ~$20 at 500, ~$30 at 1,000, ~$150 at 10,000, ~$720 at 50,000 (Aug 2026). Email + SMS from ~$35 at the first paid band. Suppress cold profiles or you pay for ghosts. Confirm on klaviyo.com/pricing.',
     verdict:
       'Default shortlist for serious e-commerce messaging. Non-retail teams should pressure-test against ActiveCampaign or HubSpot.',
   },
@@ -94,6 +94,8 @@ export const TOOL_PILLARS: Record<string, ToolPillarCopy> = {
       'Deep CRM + scoring funnels (ActiveCampaign/HubSpot)',
       'Creator commerce stacks purpose-built in Kit',
     ],
+    pricingNote:
+      'Free under 250 contacts. Standard and Premium are contact-tiered; public tiles often show intro rates (Standard commonly ~$20/mo at small lists; Premium from ~$350/mo intro). SMS is a credit add-on in select countries. Confirm on mailchimp.com/pricing.',
     verdict:
       'Fine starting point; many StackClash readers outgrow it into MAP/CRM or commerce specialists—use the matchups below to decide.',
   },
@@ -113,6 +115,8 @@ export const TOOL_PILLARS: Record<string, ToolPillarCopy> = {
       'Creator newsletter businesses (Kit)',
       'Heavy CRM/sales pipeline requirements',
     ],
+    pricingNote:
+      'Free: 250 contacts / 500 emails. Standard is list-based (promo tiles often ~$11–16/mo at 500 contacts). Pro adds unlimited email (fair use) and SMS credits from about $0.007–0.009/US message at volume. 3-month-upfront discounts expire — model the list price. Confirm on omnisend.com/pricing.',
     verdict:
       'Strong multi-channel retail option. Compare with Klaviyo for data depth and Brevo for budget multi-channel.',
   },
@@ -189,6 +193,8 @@ export const TOOL_PILLARS: Record<string, ToolPillarCopy> = {
       'Teams that only need pipeline hygiene',
       'Budgets that cannot fund admin and implementation',
     ],
+    pricingNote:
+      'Seat × cloud × implementation. Public Starter tiles understate TCO. Budget licenses plus an admin or SI. Marketing is usually another cloud. Compare apples-to-apples against HubSpot hubs, not a $25/user headline.',
     verdict:
       'Choose Salesforce when platform ceiling matters more than speed. Otherwise HubSpot, Pipedrive, or Zoho often win—see below.',
   },
@@ -229,6 +235,90 @@ export const TOOL_PILLARS: Record<string, ToolPillarCopy> = {
     ],
     verdict:
       'Strong value CRM option. Validate marketing automation and UX against HubSpot and Pipedrive in the matchups below.',
+  },
+  zapier: {
+    tagline: 'No-code automation across 9,000+ apps — the default connector layer',
+    overview: [
+      'Zapier is the safest way to move data between apps without engineering: linear Zaps, a huge catalog, and a 2026 surface that includes Agents, Tables, Forms, Canvas, and MCP. Professional starts at $19.99/month annually for 750 tasks.',
+      'On StackClash we put it next to Make (visual canvas, cheaper credits). If you need an obscure app or non-technical builders, start here. If multi-step volume would explode the task bill, read the Make matchup.',
+    ],
+    bestFor: [
+      'Teams that need breadth of native apps more than a visual canvas',
+      'Non-technical operators shipping linear workflows',
+      'Orgs that want Team/Enterprise governance, SSO, and shared connections',
+    ],
+    notIdealFor: [
+      'High-volume multi-step scenarios where every action is a task',
+      'Heavy branching, loops, and array iteration (Make is more natural)',
+      'Teams that want self-hosted automation (look at n8n)',
+    ],
+    pricingNote:
+      'Free: 100 tasks/mo, two-step Zaps. Professional $19.99/mo annual at 750 tasks; $129/mo annual at 10,000 tasks. Team from $69/mo annual at 2,000 tasks. Tasks = successful action steps. Confirm on zapier.com/pricing.',
+    verdict:
+      'Default shortlist for app-to-app automation. Pressure-test against Make when workflows get branchy or the task bill climbs.',
+  },
+  make: {
+    tagline: 'Visual automation canvas billed in credits — stronger at complexity and volume',
+    overview: [
+      'Make (formerly Integromat) is a graph editor: routers, iterators, aggregators, HTTP. Credits replaced operations on 27 August 2025; most non-AI modules still cost one credit per run.',
+      'We compare it with Zapier because that is the actual buying question. Make usually wins unit economics. Zapier usually wins catalog and ease.',
+    ],
+    bestFor: [
+      'Power users drawing branching scenarios',
+      'Volume that would make Zapier tasks expensive',
+      'Teams comfortable owning a credit meter and a canvas',
+    ],
+    notIdealFor: [
+      'Non-technical teams that need a linear builder',
+      'A critical app that only works well as a Zapier native',
+      'Enterprise governance as the first requirement',
+    ],
+    pricingNote:
+      'Free: 1,000 credits, 2 active scenarios. Core ~$9–12/mo annual for 10,000 credits (Make moved Core pricing during 2026 — confirm the slider). Pro and Teams add observability and roles at the same 10k-credit entry. Annual is typically ~15%+ off monthly. See make.com/en/pricing.',
+    verdict:
+      'Best when the workflow is a diagram, not a list. Read Make vs Zapier before you standardize the company on either.',
+  },
+  shopify: {
+    tagline: 'Hosted commerce platform — checkout, payments, admin, and app store in one bill',
+    overview: [
+      'Shopify is the default hosted store: Basic $29/mo annual, Grow $79, Advanced $299, Plus from $2,300. Shopify Payments rates start at 2.9% + 30¢ online on Basic. POS Pro is $89/location/month.',
+      'We compare it with WooCommerce, the WordPress alternative. Shopify wins operational simplicity. Woo wins ownership and CMS depth.',
+    ],
+    bestFor: [
+      'Merchants who want to sell, not run servers',
+      'Brands that need POS and multi-channel without stitching',
+      'Teams that will pay a platform tax for checkout conversion and uptime',
+    ],
+    notIdealFor: [
+      'WordPress-native content machines that need unconstrained PHP',
+      'Catalogs and memberships Shopify apps cannot model cleanly',
+      'Operators who refuse SaaS lock-in on the product database',
+    ],
+    pricingNote:
+      'Annual: Basic $29/mo, Grow $79, Advanced $299, Plus from $2,300. Monthly is higher ($39 / $105 / $399). Third-party payment fees apply if you skip Shopify Payments (2% on Basic). Confirm on shopify.com/pricing.',
+    verdict:
+      'Wins for most merchants. If WordPress is already the business, read Shopify vs WooCommerce before you migrate.',
+  },
+  woocommerce: {
+    tagline: 'Free WordPress commerce plugin — you own the stack and the maintenance',
+    overview: [
+      'WooCommerce is open-source ecommerce on WordPress. The plugin is free. Hosting, theme, extensions, and the person who patches them are not. Payment processing is usually Stripe/WooPayments at network rates, without a Shopify overlay fee.',
+      'We compare it with Shopify for the hosted vs owned decision. Pick Woo when you have WordPress skills (or a retainer) and need customization Shopify will not give you.',
+    ],
+    bestFor: [
+      'Sites already on WordPress where content and commerce must share a CMS',
+      'Custom product types, memberships, or ERP-tied catalogs',
+      'Teams that will own hosting, backups, and plugin hygiene',
+    ],
+    notIdealFor: [
+      'Solo merchants with no developer on call',
+      'Operators who need a supported POS and checkout as a product',
+      'Anyone choosing Woo only because “it’s free”',
+    ],
+    pricingNote:
+      'Software $0. Add hosting ($10–80+/mo typical), theme, extensions, and card rates. TCO is a project budget, not a tile. Official: woocommerce.com.',
+    verdict:
+      'Right when you need ownership. Wrong as a free Shopify. See the Shopify matchup for the honest cost comparison.',
   },
 };
 

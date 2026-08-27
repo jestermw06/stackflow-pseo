@@ -1,10 +1,12 @@
 import type { MetadataRoute } from 'next';
 import comparisonData from '../data/production_comparisons.json';
+import { longformSlugs } from '../lib/longform';
 import { SITE_URL } from '../lib/site';
 import { getPillarToolIds } from '../lib/tools';
 import type { Comparison } from '../lib/types';
 
 const comparisons = comparisonData as Comparison[];
+const deep = new Set(longformSlugs());
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
@@ -28,6 +30,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.9,
     },
+    {
+      url: `${SITE_URL}/methodology`,
+      lastModified,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
   ];
 
   const toolRoutes: MetadataRoute.Sitemap = getPillarToolIds().map((id) => ({
@@ -41,7 +49,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${SITE_URL}/${c.slug}`,
     lastModified,
     changeFrequency: 'monthly' as const,
-    priority: 0.8,
+    priority: deep.has(c.slug) ? 0.9 : c.quality === 'flagship' ? 0.85 : 0.8,
   }));
 
   return [...staticRoutes, ...toolRoutes, ...comparisonRoutes];

@@ -30,18 +30,24 @@ export function getPillarToolIds(): string[] {
       counts.set(id, (counts.get(id) || 0) + 1);
     }
   }
-  return Array.from(counts.entries())
-    .filter(([, n]) => n >= TOOL_PILLAR_MIN_COMPARISONS)
-    .sort((a, b) => b[1] - a[1])
+  const ranked = Array.from(counts.entries())
+    .filter(
+      ([id, n]) => n >= TOOL_PILLAR_MIN_COMPARISONS || Boolean(TOOL_PILLARS[id])
+    )
+    .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
     .map(([id]) => id);
+
+  const extras = Object.keys(TOOL_PILLARS).filter((id) => !ranked.includes(id));
+  return [...ranked, ...extras];
 }
 
 export function getPillarCopy(id: string): ToolPillarCopy | null {
   return TOOL_PILLARS[id] || null;
 }
 
-export function hasToolPage(id: string): boolean {
-  return getComparisonsForTool(id).length >= TOOL_PILLAR_MIN_COMPARISONS;
+export function hasToolPage(id: string | undefined): boolean {
+  if (!id) return false;
+  return Boolean(TOOL_PILLARS[id]) || getComparisonsForTool(id).length >= TOOL_PILLAR_MIN_COMPARISONS;
 }
 
 export function defaultPillarCopy(software: Software): ToolPillarCopy {

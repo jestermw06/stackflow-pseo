@@ -1,7 +1,9 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
+import JsonLd from '../../../components/JsonLd';
 import { getOutboundUrl, isAffiliateLink } from '../../../lib/affiliates';
+import { softwareGuideJsonLd } from '../../../lib/jsonld';
 import { SITE_NAME, SITE_URL } from '../../../lib/site';
 import {
   defaultPillarCopy,
@@ -59,6 +61,12 @@ export default function ToolPillarPage({
 
   return (
     <main>
+      <JsonLd
+        data={softwareGuideJsonLd(
+          software,
+          copy.tagline || software.description
+        )}
+      />
       <div className="border-b border-white/5 bg-surface-900/40">
         <div className="site-container flex flex-wrap items-center gap-2 py-3 text-sm text-zinc-500">
           <Link href="/" className="hover:text-brand-400 transition">

@@ -1,5 +1,6 @@
 import React from 'react';
 import { getOutboundUrl, isAffiliateLink } from '../lib/affiliates';
+import type { LongformArticle } from '../lib/longform/types';
 import type { ComparisonPoint, Software } from '../lib/types';
 
 interface ComparisonProps {
@@ -12,6 +13,7 @@ interface ComparisonProps {
   prosB?: string[];
   consB?: string[];
   comparisonPoints?: ComparisonPoint[];
+  article?: LongformArticle | null;
 }
 
 const ComparisonTemplate: React.FC<ComparisonProps> = ({
@@ -24,6 +26,7 @@ const ComparisonTemplate: React.FC<ComparisonProps> = ({
   prosB = [],
   consB = [],
   comparisonPoints = [],
+  article = null,
 }) => {
   const nameA = softwareA?.name ?? 'Software A';
   const nameB = softwareB?.name ?? 'Software B';
@@ -35,15 +38,23 @@ const ComparisonTemplate: React.FC<ComparisonProps> = ({
   return (
     <div className="site-container py-10 sm:py-14">
       <header className="mx-auto mb-12 max-w-3xl text-center">
-        <p className="eyebrow mb-3">Head-to-head</p>
+        <p className="eyebrow mb-3">
+          {article ? 'MarTech comparison' : 'Head-to-head'}
+        </p>
         <h1 className="font-display text-3xl font-bold tracking-tight text-white sm:text-5xl">
           {nameA}{' '}
           <span className="text-brand-400">vs</span> {nameB}
         </h1>
         <p className="mx-auto mt-4 max-w-2xl text-base text-zinc-400 sm:text-lg">
-          Features, strengths, and a clear verdict for teams choosing their
-          stack.
+          {article?.dek ||
+            'Features, strengths, and a clear verdict for teams choosing their stack.'}
         </p>
+        {article && (
+          <p className="mt-3 text-xs text-zinc-500">
+            Pricing and plans reviewed {article.reviewed}. Confirm live numbers
+            on each vendor’s pricing page before you buy.
+          </p>
+        )}
         <div className="mt-6 flex flex-wrap items-center justify-center gap-2 text-xs text-zinc-500">
           {softwareA?.category && (
             <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1">
@@ -78,6 +89,10 @@ const ComparisonTemplate: React.FC<ComparisonProps> = ({
           </p>
         </div>
       </section>
+
+      {article && (
+        <LongformBody article={article} nameA={nameA} nameB={nameB} />
+      )}
 
       {/* Feature table */}
       {comparisonPoints.length > 0 && (
@@ -132,6 +147,51 @@ const ComparisonTemplate: React.FC<ComparisonProps> = ({
         <ProsConsCard title={nameA} pros={prosA} cons={consA} />
         <ProsConsCard title={nameB} pros={prosB} cons={consB} />
       </section>
+
+      {article && article.faqs.length > 0 && (
+        <section id="faq" className="mb-14">
+          <h2 className="font-display text-xl font-bold text-white sm:text-2xl">
+            Frequently asked questions
+          </h2>
+          <dl className="mt-6 space-y-4">
+            {article.faqs.map((faq) => (
+              <div
+                key={faq.q}
+                className="rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-4"
+              >
+                <dt className="font-display text-base font-semibold text-white">
+                  {faq.q}
+                </dt>
+                <dd className="mt-2 text-sm leading-relaxed text-zinc-400">
+                  {faq.a}
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </section>
+      )}
+
+      {article && article.sources.length > 0 && (
+        <section className="mb-14">
+          <h2 className="font-display text-lg font-bold text-white">
+            Sources
+          </h2>
+          <ul className="mt-3 space-y-1 text-sm text-zinc-500">
+            {article.sources.map((source) => (
+              <li key={source.href}>
+                <a
+                  href={source.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-brand-400 hover:underline"
+                >
+                  {source.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       {/* CTA */}
       <footer className="card px-6 py-10 text-center sm:px-10">
@@ -221,6 +281,183 @@ function ProsConsCard({
           ))
         )}
       </ul>
+    </div>
+  );
+}
+
+function LongformBody({
+  article,
+  nameA,
+  nameB,
+}: {
+  article: LongformArticle;
+  nameA: string;
+  nameB: string;
+}) {
+  return (
+    <div className="mx-auto mb-14 max-w-3xl">
+      <nav className="mb-10 flex flex-wrap gap-2 text-xs font-semibold text-zinc-500">
+        {[
+          ['#scorecard', 'Scorecard'],
+          ['#differ', 'How they differ'],
+          ['#pricing', 'Pricing'],
+          ['#who', 'Who should pick which'],
+          ['#faq', 'FAQ'],
+        ].map(([href, label]) => (
+          <a
+            key={href}
+            href={href}
+            className="rounded-full border border-white/10 px-3 py-1 hover:border-brand-500/40 hover:text-brand-300"
+          >
+            {label}
+          </a>
+        ))}
+      </nav>
+
+      {article.intro.map((p, i) => (
+        <p key={i} className="mb-4 text-base leading-relaxed text-zinc-300">
+          {p}
+        </p>
+      ))}
+
+      <section id="scorecard" className="mt-12">
+        <h2 className="font-display text-xl font-bold text-white sm:text-2xl">
+          Scorecard
+        </h2>
+        <p className="mt-2 text-sm text-zinc-500">
+          Scores are 1–10 for a typical mid-market buyer. They are editorial,
+          not lab benchmarks.
+        </p>
+        <div className="mt-5 overflow-x-auto rounded-2xl border border-white/10">
+          <table className="w-full min-w-[520px] text-left text-sm">
+            <thead>
+              <tr className="border-b border-white/10 text-[11px] uppercase tracking-wider text-zinc-500">
+                <th className="px-4 py-3 font-semibold">Round</th>
+                <th className="px-3 py-3 text-center font-semibold">{nameA}</th>
+                <th className="px-3 py-3 text-center font-semibold">{nameB}</th>
+                <th className="px-4 py-3 font-semibold">Why</th>
+              </tr>
+            </thead>
+            <tbody>
+              {article.scores.map((row) => (
+                <tr
+                  key={row.criterion}
+                  className="border-b border-white/[0.04] last:border-0"
+                >
+                  <td className="px-4 py-3 font-medium text-zinc-200">
+                    {row.criterion}
+                  </td>
+                  <td
+                    className={`px-3 py-3 text-center tabular-nums ${
+                      row.a > row.b ? 'font-bold text-brand-300' : 'text-zinc-300'
+                    }`}
+                  >
+                    {row.a}
+                  </td>
+                  <td
+                    className={`px-3 py-3 text-center tabular-nums ${
+                      row.b > row.a ? 'font-bold text-brand-300' : 'text-zinc-300'
+                    }`}
+                  >
+                    {row.b}
+                  </td>
+                  <td className="px-4 py-3 text-zinc-500">{row.note}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="differ" className="mt-12">
+        <h2 className="font-display text-xl font-bold text-white sm:text-2xl">
+          How they actually differ
+        </h2>
+        {article.differ.map((p, i) => (
+          <p key={i} className="mt-4 text-base leading-relaxed text-zinc-300">
+            {p}
+          </p>
+        ))}
+      </section>
+
+      <section id="pricing" className="mt-12">
+        <h2 className="font-display text-xl font-bold text-white sm:text-2xl">
+          Pricing snapshot ({article.reviewed})
+        </h2>
+        <p className="mt-2 text-sm text-zinc-500">{article.pricingCaption}</p>
+        <div className="mt-5 overflow-x-auto rounded-2xl border border-white/10">
+          <table className="w-full min-w-[480px] text-left text-sm">
+            <thead>
+              <tr className="border-b border-white/10 text-[11px] uppercase tracking-wider text-zinc-500">
+                <th className="px-4 py-3 font-semibold">Scenario</th>
+                <th className="px-4 py-3 font-semibold">{nameA}</th>
+                <th className="px-4 py-3 font-semibold">{nameB}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {article.pricingRows.map((row) => (
+                <tr
+                  key={row.label}
+                  className="border-b border-white/[0.04] last:border-0"
+                >
+                  <td className="px-4 py-3 font-medium text-zinc-200">
+                    {row.label}
+                  </td>
+                  <td className="px-4 py-3 text-zinc-300">{row.a}</td>
+                  <td className="px-4 py-3 text-zinc-300">{row.b}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <ul className="mt-4 space-y-2 text-sm text-zinc-500">
+          {article.pricingNotes.map((note) => (
+            <li key={note}>• {note}</li>
+          ))}
+        </ul>
+      </section>
+
+      <section id="who" className="mt-12 grid gap-5 md:grid-cols-2">
+        <div className="card p-6">
+          <h3 className="font-display text-lg font-bold text-white">
+            Choose {nameA} if
+          </h3>
+          <ul className="mt-3 space-y-2 text-sm text-zinc-300">
+            {article.chooseA.map((item) => (
+              <li key={item} className="flex gap-2">
+                <span className="text-brand-400">→</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="card p-6">
+          <h3 className="font-display text-lg font-bold text-white">
+            Choose {nameB} if
+          </h3>
+          <ul className="mt-3 space-y-2 text-sm text-zinc-300">
+            {article.chooseB.map((item) => (
+              <li key={item} className="flex gap-2">
+                <span className="text-brand-400">→</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {article.sections.map((section) => (
+        <section key={section.heading} className="mt-12">
+          <h2 className="font-display text-xl font-bold text-white sm:text-2xl">
+            {section.heading}
+          </h2>
+          {section.paragraphs.map((p, i) => (
+            <p key={i} className="mt-4 text-base leading-relaxed text-zinc-300">
+              {p}
+            </p>
+          ))}
+        </section>
+      ))}
     </div>
   );
 }

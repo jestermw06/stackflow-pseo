@@ -16,17 +16,25 @@ GSC → **URL Inspection** → paste URL → **Request indexing**
 
 ### Priority batch (do these first)
 
+Deep reviews first — these are the 2026 longform pages:
+
 ```
 https://stackclash.io/
 https://stackclash.io/comparisons
-https://stackclash.io/salesforce-vs-hubspot
-https://stackclash.io/mailchimp-vs-klaviyo
-https://stackclash.io/make-vs-zapier
-https://stackclash.io/hubspot-vs-pipedrive
-https://stackclash.io/shopify-vs-woocommerce
-https://stackclash.io/zendesk-vs-intercom
-https://stackclash.io/monday-com-vs-asana
+https://stackclash.io/methodology
+https://stackclash.io/hubspot-vs-activecampaign
 https://stackclash.io/hubspot-vs-mailchimp
+https://stackclash.io/mailchimp-vs-klaviyo
+https://stackclash.io/mailchimp-vs-activecampaign
+https://stackclash.io/make-vs-zapier
+https://stackclash.io/shopify-vs-woocommerce
+https://stackclash.io/salesforce-vs-hubspot
+https://stackclash.io/klaviyo-vs-omnisend
+https://stackclash.io/tools
+https://stackclash.io/tools/hubspot
+https://stackclash.io/tools/klaviyo
+https://stackclash.io/tools/zapier
+https://stackclash.io/tools/shopify
 ```
 
 ### Full comparison list

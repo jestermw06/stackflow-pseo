@@ -17,6 +17,9 @@ export default function SiteFooter() {
           <Link href="/tools" className="hover:text-brand-400 transition">
             Guides
           </Link>
+          <Link href="/methodology" className="hover:text-brand-400 transition">
+            How we score
+          </Link>
           <Link href="/sitemap.xml" className="hover:text-brand-400 transition">
             Sitemap
           </Link>

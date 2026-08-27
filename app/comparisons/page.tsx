@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import comparisonData from '../../data/production_comparisons.json';
+import { getLongform } from '../../lib/longform';
 import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from '../../lib/site';
 import type { Comparison } from '../../lib/types';
 
@@ -44,10 +45,16 @@ export default function ComparisonsIndexPage() {
             >
               <div className="min-w-0">
                 <div className="mb-1 flex items-center gap-2">
-                  {comp.quality === 'flagship' && (
+                  {getLongform(comp.slug) ? (
                     <span className="rounded-full bg-brand-500/15 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-brand-300 ring-1 ring-brand-500/30">
-                      Flagship
+                      Deep review
                     </span>
+                  ) : (
+                    comp.quality === 'flagship' && (
+                      <span className="rounded-full bg-brand-500/15 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-brand-300 ring-1 ring-brand-500/30">
+                        Flagship
+                      </span>
+                    )
                   )}
                 </div>
                 <h2 className="font-display text-lg font-semibold text-white">
