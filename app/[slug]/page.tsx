@@ -54,11 +54,13 @@ export async function generateMetadata({
       description,
       url,
       siteName: SITE_NAME,
+      images: [{ url: '/opengraph-image.png' }],
     },
     twitter: {
       card: 'summary_large_image',
       title: `${title} | ${SITE_NAME}`,
       description,
+      images: ['/opengraph-image.png'],
     },
   };
 }

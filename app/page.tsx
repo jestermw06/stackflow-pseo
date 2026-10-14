@@ -24,9 +24,11 @@ export const metadata: Metadata = {
     canonical: SITE_URL,
   },
   openGraph: {
+    type: 'website',
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
     url: SITE_URL,
+    images: [{ url: '/opengraph-image.png' }],
   },
 };
 
